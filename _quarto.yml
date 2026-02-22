@@ -1,42 +1,26 @@
 project:
   type: website
-
-execute:
-  echo: false
-  warning: false
-  message: false
+  resources:
+    - CNAME
 
 website:
   title: "MarineSensitivity.org"
+  site-url: https://MarineSensitivity.org
   repo-url: https://github.com/MarineSensitivity/MarineSensitivity.github.io
-  repo-actions: [edit, issue]
-  google-analytics: "G-9HW6L751XG" # * [Analytics - bdbest@gmail.com](https://analytics.google.com/analytics/web/?authuser=1#/p413466008/reports/intelligenthome)
+  google-analytics: "G-9HW6L751XG"
   favicon: images/logo_BOEM.png
-  back-to-top-navigation: true
   twitter-card:
     creator: "@ben_d_best"
     site: "@BOEM"
   open-graph:
     site-name: "MarineSensitivity.org"
-  site-url: https://MarineSensitivity.org
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - regions.qmd
-      - distributions.qmd
-      - sensitivities.qmd
-    right:
-      - about.qmd
-  page-footer: "Sponsored by [Bureau of Ocean Energy Management](https://www.boem.gov/). Built with [Quarto](https://quarto.org/docs/websites/). &copy; 2023 [Ben Best](https://bbest.github.io/cv), PhD"
+  page-footer:
+    center: "Sponsored by [Bureau of Ocean Energy Management](https://www.boem.gov/) | Built with [Quarto](https://quarto.org/) | &copy; 2023–2026 [Ben Best](https://bbest.github.io/cv), PhD"
 
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
-    css: styles.css
-    toc: true
-
-editor: visual
-
+      dark:  [darkly,  styles.scss]
+      light: [flatly,  styles.scss]
+    toc: false
+    page-layout: full

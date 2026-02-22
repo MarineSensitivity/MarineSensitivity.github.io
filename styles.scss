@@ -1,0 +1,286 @@
+/*-- scss:defaults --*/
+
+// BOEM USWDS color palette
+$boem-primary:        #005ea2;
+$boem-primary-dark:   #1a4480;
+$boem-primary-darker: #162e51;
+$boem-primary-light:  #73b3e7;
+$boem-primary-lighter:#d9e8f6;
+$boem-accent:         #00bde3;
+
+// typography
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+// suppress default quarto title block
+#title-block-header { display: none; }
+
+// hero section ----
+.hero {
+  position:         relative;
+  background:       url("images/mapgl-map.png") center center / cover no-repeat;
+  min-height:       70vh;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  text-align:       center;
+  color:            #fff;
+
+  &::before {
+    content:    "";
+    position:   absolute;
+    inset:      0;
+    background: linear-gradient(
+      135deg,
+      rgba($boem-primary-darker, 0.92) 0%,
+      rgba($boem-primary-dark,   0.80) 40%,
+      rgba($boem-primary,        0.70) 100%
+    );
+    z-index: 0;
+  }
+
+  .hero-content {
+    position:  relative;
+    z-index:   1;
+    max-width: 800px;
+    padding:   3rem 1.5rem;
+  }
+
+  h1 {
+    font-size:     3rem;
+    font-weight:   700;
+    margin-bottom: 0.5rem;
+    text-shadow:   0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .tagline {
+    font-size:   1.35rem;
+    opacity:     0.92;
+    margin-bottom: 1.5rem;
+  }
+
+  .boem-logo {
+    height:  60px;
+    opacity: 0.9;
+    filter:  brightness(0) invert(1);
+  }
+}
+
+// section containers ----
+.section-container {
+  max-width: 1100px;
+  margin:    0 auto;
+  padding:   3rem 1.5rem;
+}
+
+section h2 {
+  text-align:    center;
+  margin-bottom: 2rem;
+  font-weight:   600;
+}
+
+// app cards ----
+.app-cards {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:                   1.5rem;
+}
+
+.app-card {
+  border:        2px solid $boem-primary;
+  border-radius: 0.75rem;
+  padding:       2rem 1.5rem;
+  text-align:    center;
+  transition:    transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color:         inherit;
+  display:       block;
+
+  &:hover {
+    transform:  translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    text-decoration: none;
+    color:     inherit;
+  }
+
+  .bi {
+    font-size:     3rem;
+    color:         $boem-primary;
+    margin-bottom: 0.75rem;
+    display:       block;
+  }
+
+  h3 {
+    font-size:     1.25rem;
+    font-weight:   600;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    opacity:   0.85;
+    margin:    0;
+  }
+}
+
+body.quarto-dark .app-card .bi {
+  color: $boem-primary-light;
+}
+
+// about section ----
+.about-stats {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:                   1.5rem;
+  margin-top:            2rem;
+  text-align:            center;
+}
+
+.stat-item {
+  padding: 1rem;
+
+  img {
+    height:        56px;
+    margin-bottom: 0.75rem;
+    display:       block;
+    margin-left:   auto;
+    margin-right:  auto;
+  }
+
+  .stat-label {
+    font-size:   0.95rem;
+    font-weight: 600;
+    display:     block;
+  }
+}
+
+// color stat icons to match BOEM blue
+// dark mode: target $boem-primary-light (#73b3e7)
+body.quarto-dark .stat-item img {
+  filter: invert(56%) sepia(50%) saturate(600%) hue-rotate(180deg) brightness(105%);
+}
+
+// light mode: target $boem-primary (#005ea2)
+.stat-item img {
+  filter: invert(20%) sepia(90%) saturate(2000%) hue-rotate(196deg) brightness(90%);
+}
+
+// methodology figure ----
+.method-figure {
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height:    auto;
+    border-radius: 0.5rem;
+  }
+}
+
+// give the figure a light card background in dark mode so original colors stay legible
+body.quarto-dark .method-figure .quarto-figure {
+  background:    #f8f9fa;
+  padding:       1.5rem;
+  border-radius: 0.75rem;
+}
+body.quarto-dark .method-figure figcaption {
+  color: #333;
+}
+
+// version timeline ----
+.timeline {
+  position:    relative;
+  padding-left: 2.5rem;
+  margin-top:   1.5rem;
+
+  // vertical line
+  &::before {
+    content:    "";
+    position:   absolute;
+    left:       0.75rem;
+    top:        0;
+    bottom:     0;
+    width:      3px;
+    background: $boem-primary;
+    border-radius: 2px;
+  }
+}
+
+.timeline-item {
+  position:      relative;
+  margin-bottom: 2rem;
+  padding-left:  1rem;
+
+  // dot marker
+  &::before {
+    content:       "";
+    position:      absolute;
+    left:          -2rem;
+    top:           0.35rem;
+    width:         14px;
+    height:        14px;
+    border-radius: 50%;
+    background:    $boem-primary;
+    border:        3px solid var(--bs-body-bg);
+    z-index:       1;
+  }
+
+  &.current::before {
+    background: $boem-accent;
+    box-shadow: 0 0 0 4px rgba($boem-accent, 0.3);
+  }
+
+  h3 {
+    font-size:   1.2rem;
+    font-weight: 700;
+    margin:      0 0 0.25rem;
+  }
+
+  .timeline-date {
+    font-size:     0.85rem;
+    opacity:       0.7;
+    margin-bottom: 0.5rem;
+    display:       block;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+}
+
+// floating theme toggle ----
+.quarto-color-scheme-toggle.top-right {
+  position:      fixed;
+  top:           1rem;
+  right:         1rem;
+  z-index:       1050;
+  background:    rgba(0,0,0,0.4);
+  border-radius: 50%;
+  width:         2.5rem;
+  height:        2.5rem;
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+  color:         #fff;
+  font-size:     1.2rem;
+  backdrop-filter: blur(4px);
+  transition:    background 0.2s;
+
+  &:hover {
+    background: rgba(0,0,0,0.6);
+  }
+}
+
+// responsive ----
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .tagline {
+    font-size: 1.1rem;
+  }
+  .app-cards {
+    grid-template-columns: 1fr;
+  }
+}
