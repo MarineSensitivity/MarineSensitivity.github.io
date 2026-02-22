@@ -1,37 +1,37 @@
 [
   {
-    "objectID": "regions.html",
-    "href": "regions.html",
-    "title": "Regions",
-    "section": "",
-    "text": "For now this site is focused on U.S. BOEM planning areas.\n\n\n\n\n\n\n\n\n\n Back to top"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "Marine Sensitivity Toolkit",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n[1] 2\n\n\n\n\n\n Back to top"
+    "text": "Quantifying ecological sensitivity to offshore energy development across the U.S. continental shelf"
   },
   {
-    "objectID": "sensitivities.html",
-    "href": "sensitivities.html",
-    "title": "Sensitivities",
-    "section": "",
-    "text": "Sensitivities will be based on industry specific activities relateed to Oil & Gas and Offshore Wind…"
+    "objectID": "index.html#explore-the-data",
+    "href": "index.html#explore-the-data",
+    "title": "Marine Sensitivity Toolkit",
+    "section": "Explore the Data",
+    "text": "Explore the Data\n\n  \n    \n    Composite Scores\n    Interactive map of composite sensitivity scores across Program Areas\n  \n  \n    \n    Species Distributions\n    Individual species distribution models, habitat suitability, and extinction risk\n  \n  \n    \n    Documentation\n    Technical methods, data sources, and workflow notebooks"
   },
   {
-    "objectID": "distributions.html",
-    "href": "distributions.html",
-    "title": "Distributions",
-    "section": "",
-    "text": "Distributions\nSpecies and habitats will come from ….\n\n\n\n\n Back to top"
+    "objectID": "index.html#methodology-overview",
+    "href": "index.html#methodology-overview",
+    "title": "Marine Sensitivity Toolkit",
+    "section": "Methodology Overview",
+    "text": "Methodology Overview\nThe Marine Sensitivity Toolkit integrates species distribution models, extinction risk scores, and cumulative impact layers to produce composite sensitivity surfaces for offshore energy planning areas. The framework synthesizes data from NOAA, USFWS, IUCN, and academic sources to support evidence-based decision making under the Outer Continental Shelf Lands Act.\n\n\n\n\nOverview of the marine sensitivity methodology"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About\nAbout this site\n\n\n\n\n Back to top"
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Marine Sensitivity Toolkit",
+    "section": "About",
+    "text": "About\nThe Bureau of Ocean Energy Management (BOEM) is mandated under the Outer Continental Shelf Lands Act (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.\n\n\n\nFish & Invertebrates\n\n\n\nMarine Mammals\n\n\n\nSeabirds\n\n\n\nOcean Productivity"
+  },
+  {
+    "objectID": "index.html#version-history",
+    "href": "index.html#version-history",
+    "title": "Marine Sensitivity Toolkit",
+    "section": "Version History",
+    "text": "Version History\n\n\nv3\nFebruary 2026 – present\nProgram Areas for the National OCS Plan. Ecoregion rescaling. Seven source datasets merged (AquaMaps, NOAA CetMap, Duke OBIS-SEAMAP, NOAA NCCOS, BOEM-NCCOS, Marine-Life Data & Analysis Team, Map of Biodiversity Importance). ESA, MMPA, MBTA, and IUCN extinction risk scoring.\n\n\nv2\nJanuary 2026\nTransition to Program Areas (2026). Individual model layers. Model merging pipeline. Cloud-optimized GeoTIFF storage.\n\n\nv1\nSeptember 2023 – December 2025\nPlanning Areas across U.S. EEZ. AquaMaps-based species distributions. Flower plots for multi-taxa visualization. Species tables with conservation status."
   }
 ]
