@@ -153,6 +153,14 @@ body.quarto-dark .app-card .bi {
     font-weight: 600;
     display:     block;
   }
+
+  .bi {
+    font-size:     2rem;
+    color:         $boem-primary;
+    //margin-bottom: 0.75rem;
+    display:       block;
+  }
+
 }
 
 // color stat icons to match BOEM blue

@@ -50,7 +50,7 @@ Quantifying ecological sensitivity to offshore energy development across the U.S
 :::: {.section-container}
 ## Methodology Overview
 
-The Marine Sensitivity Toolkit integrates species distribution models, extinction risk scores, and cumulative impact layers to produce composite sensitivity surfaces for offshore energy planning areas. The framework synthesizes data from NOAA, USFWS, IUCN, and academic sources to support evidence-based decision making under the Outer Continental Shelf Lands Act.
+The Marine Sensitivity Toolkit integrates species distribution models, extinction risk scores, and cumulative impact layers to produce composite sensitivity surfaces for offshore energy planning areas. The framework synthesizes data from NOAA, USFWS, IUCN, and academic sources to support evidence-based decision making under the Outer Continental Shelf Lands Act. For more, see the [Documentation](https://marinesensitivity.org/docs/).
 
 ::: {.method-figure}
 ![Overview of the marine sensitivity methodology](images/overview-methods.svg){.lightbox}
@@ -68,7 +68,7 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 ::: {.stat-item}
 ![](images/icons/fish.svg){.stat-icon}
 
-[Fish & Invertebrates]{.stat-label}
+[Fish]{.stat-label}
 :::
 
 ::: {.stat-item}
@@ -86,7 +86,12 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 ::: {.stat-item}
 ![](images/icons/productivity.svg){.stat-icon}
 
-[Ocean Productivity]{.stat-label}
+[Primary Productivity]{.stat-label}
+:::
+
+::: {.stat-item}
+<i class="bi bi-three-dots"></i>
+[And more]{.stat-label}
 :::
 
 ::::
