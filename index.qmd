@@ -12,7 +12,10 @@ include-in-header:
 # Marine Sensitivity Toolkit
 
 ::: {.tagline}
-Quantifying ecological sensitivity to offshore energy development across the U.S. continental shelf
+
+**The Marine Sensitivity Toolkit**<br>
+_atlas of species distributions and federal conservation status in support of U.S. offshore energy planning_
+
 :::
 
 ![](images/logo_BOEM.png){.boem-logo}
