@@ -107,9 +107,17 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 :::: {.timeline}
 
 ::: {.timeline-item .current}
+### v4
+
+[March 2026 – present]{.timeline-date}
+
+Replaced overly extensive IUCN sea turtle range maps with more realistic State of the World's Turtles (SWOT) global distributions (viewable at [seamap.env.duke.edu/swot](http://seamap.env.duke.edu/swot)). Applied NOAA Distinct Population Segment (DPS) polygons with ESA listing status (NMFS:EN 100, NMFS:TN 50) to differentiate Endangered vs Threatened populations, resulting in more restrictive distributions dominated by ESA risk values. (See workflow [ingest\_turtles-swot-dps](https://marinesensitivity.org/workflows/ingest_turtles-swot-dps.html).)
+:::
+
+::: {.timeline-item}
 ### v3
 
-[February 2026 – present]{.timeline-date}
+[February 2026]{.timeline-date}
 
 Program Areas for the National OCS Plan. Ecoregion rescaling. Seven source datasets merged from continuous suitability models (AquaMaps) to binary range maps (NMFS, FWS, BirdLife, IUCN) with masking (where global IUCN range map exists). New species sensitivity weighting based on national ESA or global IUCN extinction risk along with protection from Marine Mammal Protection Act (MMPA) and Migratory Bird Treaty Act (MBTA).
 :::
