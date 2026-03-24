@@ -107,9 +107,17 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 :::: {.timeline}
 
 ::: {.timeline-item .current}
-### v4
+### v5
 
 [March 2026 – present]{.timeline-date}
+
+Fixed MMPA spatial floor (minimum 20) for FWS-managed marine mammals (walrus, polar bear, sea otter, manatee, dugong) that were missing MMPA protection in earlier versions. Documented the bifurcation of modeling approaches: standard species use a scalar extinction risk weight at scoring time, while sea turtles use a spatially varying extinction risk raster (from SWOT+DPS) multiplied during model merging.
+:::
+
+::: {.timeline-item}
+### v4
+
+[March 2026]{.timeline-date}
 
 Replaced overly extensive IUCN sea turtle range maps with more realistic State of the World's Turtles (SWOT) global distributions (viewable at [seamap.env.duke.edu/swot](http://seamap.env.duke.edu/swot)). Applied NOAA Distinct Population Segment (DPS) polygons with ESA listing status (NMFS:EN 100, NMFS:TN 50) to differentiate Endangered vs Threatened populations, resulting in more restrictive distributions dominated by ESA risk values. (See workflow [ingest\_turtles-swot-dps](https://marinesensitivity.org/workflows/ingest_turtles-swot-dps.html).)
 :::
