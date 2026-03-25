@@ -111,7 +111,7 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 
 [March 2026 – present]{.timeline-date}
 
-Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (*Phoca vitulina*, *Trichechus manatus*, *Pusa hispida*) from a newer IUCN download. Fixed a merge cleanup bug where stale merged models persisted when re-merging produced 0 cells. Resolves all 12 marine mammal species flagged by NOAA SEFSC as erroneously present in the Gulf of America. Net effect on Program Area scores is negligible.
+Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (*Phoca vitulina*, *Trichechus manatus*, *Pusa hispida*) from more complete IUCN mammals download. Net effect on Program Area scores is negligible: Southern California (SOC) Score +1, coral +3, fish -1.
 :::
 
 ::: {.timeline-item}
