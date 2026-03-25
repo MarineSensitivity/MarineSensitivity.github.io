@@ -352,9 +352,14 @@ gtag('config', 'G-9HW6L751XG', { 'anonymize_ip': true});
 <section id="version-history" class="level2 section-container">
 <h2 class="anchored" data-anchor-id="version-history">Version History</h2>
 <div class="timeline">
-<section id="v5" class="level3 timeline-item current">
-<h3 class="anchored" data-anchor-id="v5">v5</h3>
+<section id="v6" class="level3 timeline-item current">
+<h3 class="anchored" data-anchor-id="v6">v6</h3>
 <p><span class="timeline-date">March 2026 – present</span></p>
+<p>Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (<em>Phoca vitulina</em>, <em>Trichechus manatus</em>, <em>Pusa hispida</em>) from a newer IUCN download. Fixed a merge cleanup bug where stale merged models persisted when re-merging produced 0 cells. Resolves all 12 marine mammal species flagged by NOAA SEFSC as erroneously present in the Gulf of America. Net effect on Program Area scores is negligible.</p>
+</section>
+<section id="v5" class="level3 timeline-item">
+<h3 class="anchored" data-anchor-id="v5">v5</h3>
+<p><span class="timeline-date">March 2026</span></p>
 <p>Fixed MMPA spatial floor (minimum 20) for FWS-managed marine mammals (walrus, polar bear, sea otter, manatee, dugong) that were missing MMPA protection in earlier versions. Documented the bifurcation of modeling approaches: standard species use a scalar extinction risk weight at scoring time, while sea turtles use a spatially varying extinction risk raster (from SWOT+DPS) multiplied during model merging.</p>
 </section>
 <section id="v4" class="level3 timeline-item">
