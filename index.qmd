@@ -107,9 +107,17 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 :::: {.timeline}
 
 ::: {.timeline-item .current}
-### v5
+### v6
 
 [March 2026 – present]{.timeline-date}
+
+Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (*Phoca vitulina*, *Trichechus manatus*, *Pusa hispida*) from a newer IUCN download. Fixed a merge cleanup bug where stale merged models persisted when re-merging produced 0 cells. Resolves all 12 marine mammal species flagged by NOAA SEFSC as erroneously present in the Gulf of America. Net effect on Program Area scores is negligible.
+:::
+
+::: {.timeline-item}
+### v5
+
+[March 2026]{.timeline-date}
 
 Fixed MMPA spatial floor (minimum 20) for FWS-managed marine mammals (walrus, polar bear, sea otter, manatee, dugong) that were missing MMPA protection in earlier versions. Documented the bifurcation of modeling approaches: standard species use a scalar extinction risk weight at scoring time, while sea turtles use a spatially varying extinction risk raster (from SWOT+DPS) multiplied during model merging.
 :::
