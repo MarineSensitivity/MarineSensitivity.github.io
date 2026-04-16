@@ -8,7 +8,7 @@ website:
   site-url: https://MarineSensitivity.org
   repo-url: https://github.com/MarineSensitivity/MarineSensitivity.github.io
   google-analytics: "G-9HW6L751XG"
-  favicon: images/logo_BOEM.png
+  favicon: images/favicon.ico
   twitter-card:
     creator: "@ben_d_best"
     site: "@BOEM"
