@@ -29,12 +29,12 @@ _atlas of species distributions and federal conservation status in support of U.
 
 ```{=html}
 <div class="app-cards">
-  <a class="app-card" href="https://app.marinesensitivity.org/mapgl/" target="_blank">
+  <a class="app-card" href="https://app.marinesensitivity.org/scores/" target="_blank">
     <i class="bi bi-globe-americas"></i>
     <h3>Composite Scores</h3>
     <p>Interactive map of composite sensitivity scores across Program Areas</p>
   </a>
-  <a class="app-card" href="https://app.marinesensitivity.org/mapsp/" target="_blank">
+  <a class="app-card" href="https://app.marinesensitivity.org/species/" target="_blank">
     <i class="bi bi-layers"></i>
     <h3>Species Distributions</h3>
     <p>Individual species distribution models, habitat suitability, and extinction risk</p>

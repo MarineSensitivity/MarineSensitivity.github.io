@@ -4,3 +4,4 @@ _site
 
 **/*.quarto_ipynb
 .Rproj.user
+.positai
