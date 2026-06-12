@@ -107,9 +107,17 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 :::: {.timeline}
 
 ::: {.timeline-item .current}
+### v7
+
+[June 2026 – present]{.timeline-date}
+
+Decoupled species validity from Program Area overlap. Earlier versions silently required a species to overlap a current BOEM Program Area to count as valid, which hid biodiversity outside the program cycle's footprint. Validity now means a taxonomically valid species with a modeled distribution anywhere in the study area, restoring the full set from 9,424 to **16,158 valid marine species** — of which **9,230** fall within the 20 BOEM Program Areas. Program Area membership is now applied as a spatial query rather than a species-level filter, so the map and report applications show marine life everywhere in US waters, not only within Program Areas. Scores were recomputed over the full set with negligible effect on Program Area scores (18 of 20 unchanged; only Gulf of America GAB −0.04 and GAA −0.00 shifted).
+:::
+
+::: {.timeline-item}
 ### v6
 
-[March 2026 – present]{.timeline-date}
+[March 2026 – June 2026]{.timeline-date}
 
 Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (*Phoca vitulina*, *Trichechus manatus*, *Pusa hispida*) from more complete IUCN mammals download. Net effect on Program Area scores is negligible: Southern California (SOC) Score +1, coral +3, fish -1.
 :::
