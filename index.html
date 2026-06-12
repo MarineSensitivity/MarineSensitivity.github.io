@@ -43,8 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-35c441106b846224604e93fe0f263a97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ab983985bf38facc4480c951ecfeb34b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-8ca8118f0d42d5ea64e9f09961004612.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c291e23ebc7d3b0ab12194b2831fe4d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -352,9 +352,14 @@ gtag('config', 'G-9HW6L751XG', { 'anonymize_ip': true});
 <section id="version-history" class="level2 section-container">
 <h2 class="anchored" data-anchor-id="version-history">Version History</h2>
 <div class="timeline">
-<section id="v6" class="level3 timeline-item current">
+<section id="v7" class="level3 timeline-item current">
+<h3 class="anchored" data-anchor-id="v7">v7</h3>
+<p><span class="timeline-date">June 2026 – present</span></p>
+<p>Decoupled species validity from Program Area overlap. Earlier versions silently required a species to overlap a current BOEM Program Area to count as valid, which hid biodiversity outside the program cycle’s footprint. Validity now means a taxonomically valid species with a modeled distribution anywhere in the study area, restoring the full set from 9,424 to <strong>16,158 valid marine species</strong> — of which <strong>9,230</strong> fall within the 20 BOEM Program Areas. Program Area membership is now applied as a spatial query rather than a species-level filter, so the map and report applications show marine life everywhere in US waters, not only within Program Areas. Scores were recomputed over the full set with negligible effect on Program Area scores (18 of 20 unchanged; only Gulf of America GAB −0.04 and GAA −0.00 shifted).</p>
+</section>
+<section id="v6" class="level3 timeline-item">
 <h3 class="anchored" data-anchor-id="v6">v6</h3>
-<p><span class="timeline-date">March 2026 – present</span></p>
+<p><span class="timeline-date">March 2026 – June 2026</span></p>
 <p>Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (<em>Phoca vitulina</em>, <em>Trichechus manatus</em>, <em>Pusa hispida</em>) from more complete IUCN mammals download. Net effect on Program Area scores is negligible: Southern California (SOC) Score +1, coral +3, fish -1.</p>
 </section>
 <section id="v5" class="level3 timeline-item">
