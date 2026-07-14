@@ -238,6 +238,45 @@ body.quarto-dark .method-figure figcaption {
     box-shadow: 0 0 0 4px rgba($boem-accent, 0.3);
   }
 
+  // pre-release (v8) — distinct teal marker + badge + app pills
+  &.preview::before {
+    background: #20c997;
+    box-shadow: 0 0 0 4px rgba(#20c997, 0.3);
+  }
+
+  .badge-prerelease {
+    display:        inline-block;
+    font-size:      0.6rem;
+    font-weight:    700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color:          #fff;
+    background:     #20c997;
+    border-radius:  4px;
+    padding:        1px 6px;
+    margin-left:    0.5rem;
+    vertical-align: middle;
+  }
+
+  .timeline-apps {
+    margin-top: 0.6rem;
+    display:    flex;
+    gap:        0.5rem;
+    flex-wrap:  wrap;
+
+    a {
+      font-size:       0.8rem;
+      font-weight:     600;
+      text-decoration: none;
+      padding:         3px 10px;
+      border-radius:   12px;
+      border:          1.5px solid #20c997;
+      color:           #20c997;
+
+      &:hover { background: rgba(#20c997, 0.12); }
+    }
+  }
+
   h3 {
     font-size:   1.2rem;
     font-weight: 700;

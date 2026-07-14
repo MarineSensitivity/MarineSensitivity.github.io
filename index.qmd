@@ -106,6 +106,27 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 
 :::: {.timeline}
 
+::: {.timeline-item .preview}
+### v8 — Marine Atlas [PRE-RELEASE]{.badge-prerelease}
+
+[Preview · 2026 — live alongside the current v7]{.timeline-date}
+
+A ground-up rebuild as a global **Marine Atlas**. Preview apps are live now (links below); v7 remains the default. What differs from v7:
+
+- **Whole-range global ingest.** Every species is modeled across its *entire* global range on a shared global 0.05° ocean grid — no US land mask, no Program-Area gate — so a species' full distribution is captured and "how marine" is a *derived* metric, not a filter.
+- **Seabird de-duplication.** A BirdLife-sisid ↔ WoRMS-aphia crosswalk merges each bird's BirdLife, USFWS, and AquaMaps inputs into a *single* model; v7 split some seabirds across two taxa (e.g. Marbled Murrelet, Brown Pelican). This removes double-counting — seabird-heavy Program Areas (Alaska, Pacific) score several points lower than v7 as a result, with overall Program-Area correlation to v7 of 0.94.
+- **Original *and* interpolated distributions.** Each source model is published in two representations — the native-resolution original (e.g. AquaMaps 0.5° HCAF) and the 0.05° interpolated surface used in scoring — stored in a **STAC** catalog and toggleable in the species app.
+- **Partitioned-Parquet marine-atlas on S3.** All layers are released as content-addressed, partitioned Parquet served via titiler + a STAC catalog, replacing per-dataset archives.
+- **Taxonomy-driven categories.** Species categories come from WoRMS taxonomy (no catch-all "other" bucket); reptiles and amphibians are excluded from scoring.
+
+```{=html}
+<div class="timeline-apps">
+  <a href="https://app.marinesensitivity.org/scores_v8/" target="_blank">Composite Scores (v8) →</a>
+  <a href="https://app.marinesensitivity.org/species_v8/" target="_blank">Species Distributions (v8) →</a>
+</div>
+```
+:::
+
 ::: {.timeline-item .current}
 ### v7
 
