@@ -7,7 +7,10 @@ website:
   title: "MarineSensitivity.org"
   site-url: https://MarineSensitivity.org
   repo-url: https://github.com/MarineSensitivity/MarineSensitivity.github.io
-  google-analytics: "G-9HW6L751XG"
+  # analytics live in _analytics.html (include-in-header, below) rather than the
+  # `google-analytics:` key: the key cannot set `content_group`, which is how the
+  # one shared measurement ID separates home / docs / workflows / msens / apps.
+  # Enabling both would double-count page views.
   favicon: images/favicon.ico
   twitter-card:
     creator: "@ben_d_best"
@@ -24,3 +27,5 @@ format:
       light: [flatly,  styles.scss]
     toc: false
     page-layout: full
+    include-in-header:
+      - _analytics.html
