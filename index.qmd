@@ -107,11 +107,33 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
 :::: {.timeline}
 
 ::: {.timeline-item .preview}
-### v8 — Marine Atlas [PRE-RELEASE]{.badge-prerelease}
+### v9 — AquaX + spatial extinction risk [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
 
-[Preview · 2026 — live alongside the current v7]{.timeline-date}
+[Preview · August 2026 — under review; v7 remains the default]{.timeline-date}
 
-A ground-up rebuild as a global **Marine Atlas**. Preview apps are live now (links below); v7 remains the default. What differs from v7:
+Builds on the v8 Marine Atlas with two changes to *what* is scored, on the same global grid:
+
+- **AquaX supersedes AquaMaps in US waters.** 10,536 ensemble habitat-suitability models from the AquaX framework (Reygondeau et al. 2026), delivered on the analysis grid and masked to US waters, replace AquaMaps for the same species wherever AquaX was modeled (10,517 species); AquaMaps continues for the ~6,000 species AquaX did not model and everywhere outside its mask. Each input can be viewed *as delivered* and *as ingested*.
+- **Extinction risk is spatial for species listed by Distinct Population Segment.** For the 19 species whose ESA listing applies to some populations only (humpback and Southern Resident killer whales, Cook Inlet beluga, the salmon and steelhead ESUs, both sturgeons, …) risk is a per-cell surface — each listed entity's status inside its designated critical habitat, from NOAA Fisheries' authoritative service, and the species' baseline elsewhere — carried beside the merged model and applied at scoring. The humpback no longer reads Endangered species-wide from DPSs that breed outside US waters.
+- **Program-Area scores stay equivalent** to v8 on common inputs (a control run with supersession off reproduces v8 exactly), and the 2,742 species AquaX modeled but found absent in US waters keep their AquaMaps surface pending review.
+
+```{=html}
+<div class="timeline-apps">
+  <a href="https://preview.marinesensitivity.org/v9/scores/" target="_blank">Composite Scores (v9) →</a>
+  <a href="https://preview.marinesensitivity.org/v9/species/" target="_blank">Species Distributions (v9) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v9/" target="_blank">Documentation (v9) →</a>
+</div>
+```
+
+Pre-releases are served from the **review host** and open only to invited reviewers (sign in with your reviewer e-mail; a one-time code is sent). The public apps always show the current release.
+:::
+
+::: {.timeline-item .preview}
+### v8 — Marine Atlas [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+
+[Preview · July–August 2026 — under review; v7 remains the default]{.timeline-date}
+
+A ground-up rebuild as a global **Marine Atlas**. What differs from v7:
 
 - **Whole-range global ingest.** Every species is modeled across its *entire* global range on a shared global 0.05° ocean grid — no US land mask, no Program-Area gate — so a species' full distribution is captured and "how marine" is a *derived* metric, not a filter.
 - **Seabird de-duplication.** A BirdLife-sisid ↔ WoRMS-aphia crosswalk merges each bird's BirdLife, USFWS, and AquaMaps inputs into a *single* model; v7 split some seabirds across two taxa (e.g. Marbled Murrelet, Brown Pelican). This removes double-counting — seabird-heavy Program Areas (Alaska, Pacific) score several points lower than v7 as a result, with overall Program-Area correlation to v7 of 0.94.
@@ -121,8 +143,9 @@ A ground-up rebuild as a global **Marine Atlas**. Preview apps are live now (lin
 
 ```{=html}
 <div class="timeline-apps">
-  <a href="https://app.marinesensitivity.org/scores_v8/" target="_blank">Composite Scores (v8) →</a>
-  <a href="https://app.marinesensitivity.org/species_v8/" target="_blank">Species Distributions (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/v8/scores/" target="_blank">Composite Scores (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/v8/species/" target="_blank">Species Distributions (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v8/" target="_blank">Documentation (v8) →</a>
 </div>
 ```
 :::
