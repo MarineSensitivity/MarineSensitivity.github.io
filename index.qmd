@@ -9,12 +9,19 @@ include-in-header:
 ::::: {.hero}
 :::: {.hero-content}
 
+![](images/mst-hero.svg){.hero-art fig-alt="Marine Sensitivity Toolkit — species distributions and extinction risk, scored across US ocean waters"}
+
+::: {.hero-text}
+
+![](images/mst-mark-dark.svg){.mst-mark fig-alt=""}
+
 # Marine Sensitivity Toolkit
 
 ::: {.tagline}
 
-**The Marine Sensitivity Toolkit**<br>
 _atlas of species distributions and federal conservation status in support of U.S. offshore energy planning_
+
+:::
 
 :::
 

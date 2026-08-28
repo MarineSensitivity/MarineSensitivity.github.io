@@ -18,33 +18,37 @@ $font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, 
 
 // hero section ----
 .hero {
+  // The hero IS the artwork now (images/mst-hero.svg): the wordmark, the tagline,
+  // the 0.05-degree cell grid, the Spectral score ramp and the animals being
+  // scored. It replaces a screenshot of the scores app behind a blue wash, which
+  // showed the tool rather than saying what it is. The page background is the
+  // same deep gradient the artwork ends on, so the banner has no visible edge.
   position:         relative;
-  background:       url("images/mapgl-map.png") center center / cover no-repeat;
-  min-height:       70vh;
+  background:       linear-gradient(135deg, #0B1A22 0%, #173B4B 100%);
+  min-height:       60vh;
   display:          flex;
   align-items:      center;
   justify-content:  center;
   text-align:       center;
   color:            #fff;
 
-  &::before {
-    content:    "";
-    position:   absolute;
-    inset:      0;
-    background: linear-gradient(
-      135deg,
-      rgba($boem-primary-darker, 0.92) 0%,
-      rgba($boem-primary-dark,   0.80) 40%,
-      rgba($boem-primary,        0.70) 100%
-    );
-    z-index: 0;
-  }
-
   .hero-content {
     position:  relative;
     z-index:   1;
-    max-width: 800px;
-    padding:   3rem 1.5rem;
+    max-width: 1180px;
+    padding:   2.5rem 1.5rem;
+  }
+
+  // the banner carries its own words, so the heading below it is for screen
+  // readers and search engines only -- on a phone the roles swap (see the query
+  // at the end of this block), because 34px type baked into an SVG is unreadable
+  // at 375px wide
+  .hero-art {
+    width:         100%;
+    height:        auto;
+    display:       block;
+    margin:        0 auto;
+    border-radius: 12px;
   }
 
   h1 {
@@ -58,6 +62,20 @@ $font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, 
     font-size:   1.35rem;
     opacity:     0.92;
     margin-bottom: 1.5rem;
+  }
+
+  // the toolkit's mark, shown with the text fallback on small screens
+  .mst-mark {
+    height:        6rem;
+    margin-bottom: 1rem;
+    filter:        drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+  }
+
+  .hero-text { display: none; }
+
+  @media (max-width: 767.98px) {
+    .hero-art  { display: none; }
+    .hero-text { display: block; }
   }
 
   .boem-logo {
