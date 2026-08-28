@@ -46,8 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4a49aba8d8a52429afd40020ad05befa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6cf879badc8b6a94f5a689e89f1f3c8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1a682bd68fceb6f0bae8d67e8028e046.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3bf389ea2c63af317e963a413e0e05f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -364,10 +364,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="version-history" class="level2 section-container">
 <h2 class="anchored" data-anchor-id="version-history">Version History</h2>
 <div class="timeline">
-<section id="v8-marine-atlas-pre-release" class="level3 timeline-item preview">
-<h3 class="anchored" data-anchor-id="v8-marine-atlas-pre-release">v8 — Marine Atlas <span class="badge-prerelease">PRE-RELEASE</span></h3>
-<p><span class="timeline-date">Preview · 2026 — live alongside the current v7</span></p>
-<p>A ground-up rebuild as a global <strong>Marine Atlas</strong>. Preview apps are live now (links below); v7 remains the default. What differs from v7:</p>
+<section id="v9-aquax-spatial-extinction-risk-pre-release-reviewers" class="level3 timeline-item preview">
+<h3 class="anchored" data-anchor-id="v9-aquax-spatial-extinction-risk-pre-release-reviewers">v9 — AquaX + spatial extinction risk <span class="badge-prerelease">PRE-RELEASE · REVIEWERS</span></h3>
+<p><span class="timeline-date">Preview · August 2026 — under review; v7 remains the default</span></p>
+<p>Builds on the v8 Marine Atlas with two changes to <em>what</em> is scored, on the same global grid:</p>
+<ul>
+<li><strong>AquaX supersedes AquaMaps in US waters.</strong> 10,536 ensemble habitat-suitability models from the AquaX framework (Reygondeau et al.&nbsp;2026), delivered on the analysis grid and masked to US waters, replace AquaMaps for the same species wherever AquaX was modeled (10,517 species); AquaMaps continues for the ~6,000 species AquaX did not model and everywhere outside its mask. Each input can be viewed <em>as delivered</em> and <em>as ingested</em>.</li>
+<li><strong>Extinction risk is spatial for species listed by Distinct Population Segment.</strong> For the 19 species whose ESA listing applies to some populations only (humpback and Southern Resident killer whales, Cook Inlet beluga, the salmon and steelhead ESUs, both sturgeons, …) risk is a per-cell surface — each listed entity’s status inside its designated critical habitat, from NOAA Fisheries’ authoritative service, and the species’ baseline elsewhere — carried beside the merged model and applied at scoring. The humpback no longer reads Endangered species-wide from DPSs that breed outside US waters.</li>
+<li><strong>Program-Area scores stay equivalent</strong> to v8 on common inputs (a control run with supersession off reproduces v8 exactly), and the 2,742 species AquaX modeled but found absent in US waters keep their AquaMaps surface pending review.</li>
+</ul>
+<div class="timeline-apps">
+  <a href="https://preview.marinesensitivity.org/v9/scores/" target="_blank">Composite Scores (v9) →</a>
+  <a href="https://preview.marinesensitivity.org/v9/species/" target="_blank">Species Distributions (v9) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v9/" target="_blank">Documentation (v9) →</a>
+</div>
+<p>Pre-releases are served from the <strong>review host</strong> and open only to invited reviewers (sign in with your reviewer e-mail; a one-time code is sent). The public apps always show the current release.</p>
+</section>
+<section id="v8-marine-atlas-pre-release-reviewers" class="level3 timeline-item preview">
+<h3 class="anchored" data-anchor-id="v8-marine-atlas-pre-release-reviewers">v8 — Marine Atlas <span class="badge-prerelease">PRE-RELEASE · REVIEWERS</span></h3>
+<p><span class="timeline-date">Preview · July–August 2026 — under review; v7 remains the default</span></p>
+<p>A ground-up rebuild as a global <strong>Marine Atlas</strong>. What differs from v7:</p>
 <ul>
 <li><strong>Whole-range global ingest.</strong> Every species is modeled across its <em>entire</em> global range on a shared global 0.05° ocean grid — no US land mask, no Program-Area gate — so a species’ full distribution is captured and “how marine” is a <em>derived</em> metric, not a filter.</li>
 <li><strong>Seabird de-duplication.</strong> A BirdLife-sisid ↔︎ WoRMS-aphia crosswalk merges each bird’s BirdLife, USFWS, and AquaMaps inputs into a <em>single</em> model; v7 split some seabirds across two taxa (e.g.&nbsp;Marbled Murrelet, Brown Pelican). This removes double-counting — seabird-heavy Program Areas (Alaska, Pacific) score several points lower than v7 as a result, with overall Program-Area correlation to v7 of 0.94.</li>
@@ -376,8 +392,9 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Taxonomy-driven categories.</strong> Species categories come from WoRMS taxonomy (no catch-all “other” bucket); reptiles and amphibians are excluded from scoring.</li>
 </ul>
 <div class="timeline-apps">
-  <a href="https://app.marinesensitivity.org/scores_v8/" target="_blank">Composite Scores (v8) →</a>
-  <a href="https://app.marinesensitivity.org/species_v8/" target="_blank">Species Distributions (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/v8/scores/" target="_blank">Composite Scores (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/v8/species/" target="_blank">Species Distributions (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v8/" target="_blank">Documentation (v8) →</a>
 </div>
 </section>
 <section id="v7" class="level3 timeline-item current">
