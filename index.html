@@ -46,8 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-31e671b593e555f72912f1be4226d2ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-2a76d10e1d724251ca2f1b46ac6fc95e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ec7cfd33eb780d54f6813461e7f53069.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-179f82598deb421b2c0289858ad28dcd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -399,6 +399,21 @@ ul.task-list li input[type="checkbox"] {
   <a href="https://preview.marinesensitivity.org/v8/scores/" target="_blank">Composite Scores (v8) →</a>
   <a href="https://preview.marinesensitivity.org/v8/species/" target="_blank">Species Distributions (v8) →</a>
   <a href="https://preview.marinesensitivity.org/docs/v8/" target="_blank">Documentation (v8) →</a>
+</div>
+</section>
+<section id="v7.1-sea-turtle-core-habitat-coverage-floor-pre-release-reviewers" class="level3 timeline-item preview">
+<h3 class="anchored" data-anchor-id="v7.1-sea-turtle-core-habitat-coverage-floor-pre-release-reviewers">v7.1 — sea-turtle core habitat + coverage floor <span class="badge-prerelease">PRE-RELEASE · REVIEWERS</span></h3>
+<p><span class="timeline-date">Preview · September 2026 — a patch of v7, under review; v7 remains the default</span></p>
+<p>A surgical patch of v7 (release id <code>v7b</code>): the same grid, species and Program Areas, v7’s own scoring re-executed, and two method changes. With both switched off it reproduces v7 exactly.</p>
+<ul>
+<li><strong>Sea-turtle core habitat.</strong> AquaMaps suitability enters the turtle merge only where it is at least 0.5 (AquaMaps’ own core-habitat default), and a range cell with no suitability at or above that is dropped rather than filled at a nominal 1. Critical habitat still overrides, so no designated cell is lost. In v7 that fill, stretched by the within-ecoregion rescale, scored turtles at 46–71 in five Alaska Program Areas; in v7.1 turtles remain in one (Gulf of Alaska, 11, a small leatherback signal off Southeast Alaska) and Central California rises (19 → 27).</li>
+<li><strong>Coverage floor.</strong> A component is reported for a Program Area only where its scored cells cover at least 5% of the area; below that it is not reportable and is left out of the composite, never published as a zero.</li>
+<li><strong>Worth a careful look:</strong> with its below-average turtle component gone, Cook Inlet’s mean of remaining components (53.2) edges past Hope Basin (52.7) for the top rank. Primary productivity is unchanged from v7; the year-integrated correction lands with v10, where a national reference makes it count.</li>
+</ul>
+<div class="timeline-apps">
+  <a href="https://preview.marinesensitivity.org/v7b/scores/" target="_blank">Composite Scores (v7.1) →</a>
+  <a href="https://preview.marinesensitivity.org/v7b/species/" target="_blank">Species Distributions (v7.1) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v7b/" target="_blank">Documentation (v7.1) →</a>
 </div>
 </section>
 <section id="v7" class="level3 timeline-item current">
