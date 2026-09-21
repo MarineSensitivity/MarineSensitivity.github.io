@@ -157,6 +157,26 @@ A ground-up rebuild as a global **Marine Atlas**. What differs from v7:
 ```
 :::
 
+::: {.timeline-item .preview}
+### v7.1 — sea-turtle core habitat + coverage floor [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+
+[Preview · September 2026 — a patch of v7, under review; v7 remains the default]{.timeline-date}
+
+A surgical patch of v7 (release id `v7b`): the same grid, species and Program Areas, v7's own scoring re-executed, and two method changes. With both switched off it reproduces v7 exactly.
+
+- **Sea-turtle core habitat.** AquaMaps suitability enters the turtle merge only where it is at least 0.5 (AquaMaps' own core-habitat default), and a range cell with no suitability at or above that is dropped rather than filled at a nominal 1. Critical habitat still overrides, so no designated cell is lost. In v7 that fill, stretched by the within-ecoregion rescale, scored turtles at 46–71 in five Alaska Program Areas; in v7.1 turtles remain in one (Gulf of Alaska, 11, a small leatherback signal off Southeast Alaska) and Central California rises (19 → 27).
+- **Coverage floor.** A component is reported for a Program Area only where its scored cells cover at least 5% of the area; below that it is not reportable and is left out of the composite, never published as a zero.
+- **Worth a careful look:** with its below-average turtle component gone, Cook Inlet's mean of remaining components (53.2) edges past Hope Basin (52.7) for the top rank. Primary productivity is unchanged from v7; the year-integrated correction lands with v10, where a national reference makes it count.
+
+```{=html}
+<div class="timeline-apps">
+  <a href="https://preview.marinesensitivity.org/v7b/scores/" target="_blank">Composite Scores (v7.1) →</a>
+  <a href="https://preview.marinesensitivity.org/v7b/species/" target="_blank">Species Distributions (v7.1) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v7b/" target="_blank">Documentation (v7.1) →</a>
+</div>
+```
+:::
+
 ::: {.timeline-item .current}
 ### v7
 
