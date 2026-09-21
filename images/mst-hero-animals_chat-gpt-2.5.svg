@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" width="1600" height="640" role="img" aria-label="Marine Sensitivity Toolkit">
+  <title>Marine Sensitivity Toolkit</title>
+  <desc>The wave mark, the 0.05 degree cell grid, the spectral ramp, and refined silhouettes of marine wildlife being scored.</desc>
+  <defs>
+    <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1A22"/>
+      <stop offset="1" stop-color="#173B4B"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2E8FBE"/>
+      <stop offset="0.55" stop-color="#3AB2E4"/>
+      <stop offset="1" stop-color="#66CDE0"/>
+    </linearGradient>
+    <linearGradient id="spectral" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.000" stop-color="#5E4FA2"/><stop offset="0.100" stop-color="#3288BD"/>
+      <stop offset="0.200" stop-color="#66C2A5"/><stop offset="0.300" stop-color="#ABDDA4"/>
+      <stop offset="0.400" stop-color="#E6F598"/><stop offset="0.500" stop-color="#FFFFBF"/>
+      <stop offset="0.600" stop-color="#FEE08B"/><stop offset="0.700" stop-color="#FDAE61"/>
+      <stop offset="0.800" stop-color="#F46D43"/><stop offset="0.900" stop-color="#D53E4F"/>
+      <stop offset="1.000" stop-color="#9E0142"/>
+    </linearGradient>
+    <clipPath id="disc"><circle cx="212" cy="300" r="132"/></clipPath>
+    <clipPath id="frame"><rect x="0" y="0" width="1600" height="640"/></clipPath>
+  </defs>
+
+  <rect width="1600" height="640" fill="url(#deep)"/>
+
+  <!-- quiet data-grid texture -->
+  <g clip-path="url(#frame)" stroke="#7FB6CC" stroke-width="1" opacity="0.19">
+    <path d="M0,140 H1600 M0,300 H1600 M0,460 H1600"/>
+    <path d="M300,0 V640 M600,0 V640 M900,0 V640 M1200,0 V640 M1500,0 V640"/>
+  </g>
+
+  <!-- ocean field -->
+  <g clip-path="url(#frame)">
+    <path fill="url(#sea)" opacity="0.96"
+      d="M-20,520 C 250,585 510,522 785,453 C 1045,387 1328,352 1620,345 L1620,660 L-20,660 Z"/>
+    <path fill="#FFFFFF" opacity="0.10"
+      d="M-20,566 C 280,624 540,566 800,500 C 1060,434 1330,404 1620,398 L1620,436
+         C 1330,442 1070,472 812,538 C 552,604 280,660 -20,602 Z"/>
+
+    <!-- subtle sampling cells -->
+    <g fill="#BFEAF7">
+      <rect x="40" y="556" width="22" height="22" rx="2" opacity="0.10"/><rect x="74" y="554" width="22" height="22" rx="2" opacity="0.12"/>
+      <rect x="108" y="550.4" width="22" height="22" rx="2" opacity="0.14"/><rect x="142" y="545.8" width="22" height="22" rx="2" opacity="0.16"/>
+      <rect x="176" y="540.4" width="22" height="22" rx="2" opacity="0.18"/><rect x="210" y="534.3" width="22" height="22" rx="2" opacity="0.20"/>
+      <rect x="244" y="527.7" width="22" height="22" rx="2" opacity="0.22"/><rect x="278" y="520.7" width="22" height="22" rx="2" opacity="0.24"/>
+      <rect x="312" y="513.4" width="22" height="22" rx="2" opacity="0.26"/><rect x="346" y="505.8" width="22" height="22" rx="2" opacity="0.28"/>
+      <rect x="1094" y="408.9" width="22" height="22" rx="2" opacity="0.32"/><rect x="1128" y="411.2" width="22" height="22" rx="2" opacity="0.30"/>
+      <rect x="1162" y="414.2" width="22" height="22" rx="2" opacity="0.28"/><rect x="1196" y="417.8" width="22" height="22" rx="2" opacity="0.26"/>
+      <rect x="1230" y="422.1" width="22" height="22" rx="2" opacity="0.24"/><rect x="1264" y="426.9" width="22" height="22" rx="2" opacity="0.22"/>
+      <rect x="1298" y="432.2" width="22" height="22" rx="2" opacity="0.20"/><rect x="1332" y="438.1" width="22" height="22" rx="2" opacity="0.18"/>
+      <rect x="1366" y="444.4" width="22" height="22" rx="2" opacity="0.16"/><rect x="1400" y="451.1" width="22" height="22" rx="2" opacity="0.14"/>
+      <rect x="1434" y="458.1" width="22" height="22" rx="2" opacity="0.12"/><rect x="1468" y="465.4" width="22" height="22" rx="2" opacity="0.10"/>
+      <rect x="1502" y="472.9" width="22" height="22" rx="2" opacity="0.09"/><rect x="1536" y="480.6" width="22" height="22" rx="2" opacity="0.08"/>
+    </g>
+
+    <!-- flowing wake strokes -->
+    <path d="M-10 585 C280 638 512 590 770 520 C1015 453 1246 426 1604 410" fill="none" stroke="#DFF3FB" stroke-width="14" opacity="0.11"/>
+    <path d="M-6 592 C246 632 494 602 715 546" fill="none" stroke="#00C6D7" stroke-width="4" opacity="0.33"/>
+
+    <!-- large humpback silhouette; cleaner anatomy, lifted tail, soft surf accents -->
+    <g transform="translate(40 38) scale(0.92)" fill="#0A3A53" opacity="0.72">
+      <path d="M1020 475
+               C1072 469 1116 447 1153 425
+               C1193 401 1216 374 1240 350
+               C1268 322 1302 311 1336 316
+               C1367 321 1392 338 1411 356
+               C1430 374 1452 383 1476 379
+               C1497 376 1512 364 1528 346
+               C1534 338 1541 339 1545 348
+               C1550 360 1540 376 1527 387
+               C1510 402 1488 412 1470 423
+               C1444 438 1429 454 1419 475
+               L1398 536
+               C1394 549 1386 556 1378 551
+               C1368 545 1368 526 1369 506
+               L1371 462
+               C1347 470 1326 483 1308 500
+               C1292 515 1277 536 1262 553
+               C1248 569 1237 572 1227 565
+               C1218 558 1223 543 1231 527
+               C1244 503 1256 483 1266 460
+               C1241 469 1216 486 1198 506
+               C1187 518 1178 522 1168 516
+               C1158 510 1164 497 1176 482
+               C1184 472 1193 463 1200 453
+               C1174 466 1147 477 1119 486
+               C1088 495 1051 500 1018 495
+               C1005 493 1003 483 1020 475 Z"/>
+      <!-- tail flukes -->
+      <path d="M1155 426 C1137 413 1112 395 1089 380 C1079 373 1075 365 1081 361
+               C1091 354 1107 359 1123 368 C1142 379 1157 393 1170 408 Z"/>
+      <path d="M1158 429 C1177 413 1192 394 1210 377 C1220 367 1231 364 1237 370
+               C1242 377 1235 388 1224 399 C1207 416 1191 429 1177 440 Z"/>
+    </g>
+    <!-- whale anatomy highlights -->
+    <g fill="none" stroke="#00C6D7" stroke-linecap="round">
+      <path d="M1246 355 C1280 338 1321 337 1352 351" stroke-width="5" opacity="0.62"/>
+      <path d="M1300 432 C1326 417 1347 404 1363 386" stroke-width="3" opacity="0.50"/>
+      <path d="M1266 478 C1248 505 1238 528 1230 545" stroke-width="3" opacity="0.55"/>
+    </g>
+    <circle cx="1484" cy="373" r="3.7" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M1492 358 Q1503 365 1512 360" fill="none" stroke="#FFFFFF" stroke-width="2.5" opacity="0.55"/>
+
+    <!-- streamlined fish -->
+    <g fill="#0A3A53" opacity="0.64">
+      <path d="M580 540 C630 507 690 499 757 510 C797 516 830 529 857 546
+               C830 565 797 577 758 581 C690 588 628 577 580 552
+               C568 546 568 542 580 540 Z"/>
+      <path d="M586 540 L548 514 L559 540 L548 566 Z"/>
+      <path d="M686 508 L705 484 L722 512 Z"/>
+      <path d="M704 579 L726 604 L744 578 Z"/>
+      <path d="M837 535 C851 523 866 518 882 517 C873 530 873 542 882 555 C866 554 851 550 837 542 Z"/>
+    </g>
+    <path d="M612 543 C676 528 738 529 797 546" fill="none" stroke="#00C6D7" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+    <circle cx="820" cy="536" r="4" fill="#FFFFFF" opacity="0.88"/>
+
+    <!-- refined sea turtle -->
+    <g fill="#0A3A53" opacity="0.64">
+      <path d="M395 568 C426 534 468 517 516 519 C560 521 594 541 607 564
+               C590 588 553 602 510 606 C460 610 419 596 395 568 Z"/>
+      <path d="M485 521 C495 505 506 495 518 489 C531 502 531 517 522 530 Z"/>
+      <path d="M430 548 C410 533 394 527 383 532 C384 548 397 560 414 566 Z"/>
+      <path d="M568 544 C587 531 602 529 614 536 C613 550 602 561 586 570 Z"/>
+      <path d="M446 590 C430 603 425 619 429 628 C444 625 457 616 466 602 Z"/>
+      <path d="M544 598 C558 612 565 623 564 633 C548 631 536 620 526 606 Z"/>
+    </g>
+    <g fill="none" stroke="#00C6D7" stroke-width="3" opacity="0.58" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M414 567 C444 545 477 538 514 540 C548 542 574 553 592 567"/>
+      <path d="M451 542 L442 575 L460 595"/>
+      <path d="M485 531 L480 575 L504 603"/>
+      <path d="M520 532 L527 575 L548 597"/>
+      <path d="M550 539 L559 568"/>
+    </g>
+    <circle cx="522" cy="509" r="4" fill="#FFFFFF" opacity="0.90"/>
+
+    <!-- seabird pair: compact gliders above the title, keeping the wordmark clear -->
+    <g transform="translate(1315 68) scale(0.82)" fill="#DFF3FB" opacity="0.60">
+      <path d="M0 72 C30 56 62 47 98 50 C126 52 150 62 170 75 C145 69 121 71 103 81 C86 91 75 106 62 124 C53 136 43 143 35 139 C27 135 30 123 38 109 C46 95 55 84 65 77 C48 79 34 83 20 87 C10 90 2 87 0 81 C-2 77 -1 74 0 72 Z"/>
+      <path d="M86 66 C108 46 130 21 145 -7 C152 -19 161 -24 168 -18 C174 -12 170 0 162 12 C149 34 131 54 111 72 Z"/>
+      <path d="M150 75 C176 53 203 41 230 39 C242 38 249 42 249 49 C249 56 241 61 230 65 C203 75 176 80 154 83 Z"/>
+    </g>
+    <path d="M1325 130 C1346 121 1370 118 1392 123" fill="none" stroke="#00C6D7" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+    <g transform="translate(1490 154) scale(0.42)" fill="#DFF3FB" opacity="0.38">
+      <path d="M0 70 C34 52 66 48 95 58 C72 57 56 66 42 82 C31 95 21 100 15 95 C10 91 14 82 25 72 C14 76 5 78 0 76 C-4 75 -4 72 0 70 Z"/>
+      <path d="M53 62 C70 45 85 27 95 11 C101 2 107 0 111 5 C115 10 111 18 106 26 C95 42 82 56 66 68 Z"/>
+    </g>
+
+    <!-- tiny spray / motion accents -->
+    <g fill="#DFF3FB">
+      <circle cx="1112" cy="500" r="5" opacity="0.30"/>
+      <circle cx="1090" cy="516" r="3.5" opacity="0.24"/>
+      <circle cx="1345" cy="289" r="4" opacity="0.26"/>
+      <circle cx="1370" cy="275" r="2.8" opacity="0.20"/>
+    </g>
+    <path d="M1100 506 C1107 496 1110 486 1108 476" fill="none" stroke="#DFF3FB" stroke-width="3" opacity="0.24" stroke-linecap="round"/>
+    <path d="M1362 301 C1366 291 1368 282 1365 274" fill="none" stroke="#00C6D7" stroke-width="3" opacity="0.30" stroke-linecap="round"/>
+  </g>
+
+  <!-- circular wave mark -->
+  <circle cx="212" cy="300" r="132" fill="#0E1B22"/>
+  <path clip-path="url(#disc)" fill="url(#sea)"
+        d="M60,342 C118,368 170,342 216,300 C255,264 306,247 380,236 L380,470 L60,470 Z"/>
+  <path clip-path="url(#disc)" fill="#FFFFFF" opacity="0.22"
+        d="M60,378 C124,397 182,376 227,340 C267,308 321,292 380,286 L380,317
+           C321,325 271,339 232,372 C186,410 121,422 60,402 Z"/>
+  <circle cx="212" cy="300" r="132" fill="none" stroke="#DDE7EC" stroke-width="11"/>
+
+  <!-- typography kept clear above the wildlife field -->
+  <g font-family="Avenir Next, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="400" y="252" font-size="112" font-weight="600" fill="#FFFFFF">Marine Sensitivity</text>
+    <text x="404" y="316" font-size="38" font-weight="500" letter-spacing="7.5" fill="#9DB4C0">TOOLKIT &#183; BOEM</text>
+    <rect x="404" y="352" width="620" height="12" rx="6" fill="url(#spectral)"/>
+    <text x="404" y="424" font-size="34" fill="#C9DAE3">Species distributions and extinction risk,</text>
+    <text x="404" y="470" font-size="34" fill="#C9DAE3">scored across US ocean waters.</text>
+  </g>
+</svg>
