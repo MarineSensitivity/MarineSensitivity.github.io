@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - CNAME
+    - branding/mma-seal.svg
 
 website:
   title: "MarineSensitivity.org"
