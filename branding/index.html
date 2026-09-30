@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" class="t-navy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarineSensitivity Brand and Interface Guide</title>
+<meta name="description" content="How MarineSensitivity apps apply the Marine Minerals Administration Branding Guidelines: seal, colour, type, motifs, themes, data colour, control grammar, components and accessibility.">
+<link rel="icon" href="../images/favicon.ico">
+<script>
+  /* same rule as the atlas: follow the OS, fall back to navy, a stored choice wins */
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("ms-brand-theme"); } catch (e) {}
+    if (t !== "navy" && t !== "paper")
+      t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "paper" : "navy";
+    document.documentElement.className = "t-" + t;
+  })();
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=Jost:wght@400;600;700&display=swap">
+<style>
+/* layout: a fixed section index beside one reading column; every specimen is drawn with the
+   atlas app's own tokens (atlas/src/lib/brand/tokens.css), so this page is the system, not a picture of it */
+:root{
+  --mma-gold:#e8c24a; --mma-steel:#173d6d; --mma-navy:#001a57; --mma-crimson:#6e110f; --pink:#ff1fa3;
+  --font-display:"Century Gothic",CenturyGothic,"TeX Gyre Adventor","URW Gothic",Jost,sans-serif;
+  --font-body:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ramp-0:#3288bd; --ramp-1:#99d594; --ramp-2:#ffffbf; --ramp-3:#fc8d59; --ramp-4:#d53e4f;
+  --radius-card:12px; --radius-control:8px; --radius-pill:999px;
+}
+.t-navy{
+  color-scheme:dark;
+  --page:#0b1635; --surface-map:#0b1635; --surface-panel:#142446; --surface-raised:#1c2f57; --surface-sunken:#0a1533;
+  --text-primary:#ffffff; --text-secondary:#c7d2e8; --text-accent:#e8c24a; --text-link:#9cc8f2; --text-danger:#ff9c94;
+  --text-on-accent:#001a57; --border-accent:#e8c24a; --fill-accent:#e8c24a; --fill-control:#23375f; --fill-track:#2c4272;
+  --border-control:#8494bd; --divider:#2a3d68; --focus-ring:#e8c24a; --icon-inactive:#98a3bd; --motif-color:#e8c24a;
+  --shadow-color:#02060f;
+  --cat-bird:#7cc7f0; --cat-coral:#f08a3c; --cat-fish:#9f81e4; --cat-invertebrate:#e79ec4; --cat-mammal:#e6c700;
+  --cat-other:#b6bfd0; --cat-primprod:#4cc9a0; --cat-turtle:#a1c76b; --cat-nodata:#9aa6c2;
+}
+.t-paper{
+  color-scheme:light;
+  --page:#ffffff; --surface-map:#eaeef3; --surface-panel:#ffffff; --surface-raised:#ffffff; --surface-sunken:#fbf6e6;
+  --text-primary:#001a57; --text-secondary:#3d4c74; --text-accent:#173d6d; --text-link:#15467f; --text-danger:#6e110f;
+  --text-on-accent:#001a57; --border-accent:#001a57; --fill-accent:#e8c24a; --fill-control:#f8f1dc; --fill-track:#ece0bd;
+  --border-control:#7a6a45; --divider:#e6dab4; --focus-ring:#173d6d; --icon-inactive:#7d7155; --motif-color:#173d6d;
+  --shadow-color:#b8a67a;
+  --cat-bird:#166a99; --cat-coral:#b34d00; --cat-fish:#4822a0; --cat-invertebrate:#a3517e; --cat-mammal:#82773d;
+  --cat-other:#5b6472; --cat-primprod:#00765a; --cat-turtle:#495625; --cat-nodata:#6b7488;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--text-primary);font:17px/1.5 var(--font-body)}
+a{color:var(--text-link)}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em;line-height:1.2;margin:0;text-wrap:balance}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:700}
+h2{font-size:28px;font-weight:400;text-transform:uppercase;letter-spacing:.04em;padding-bottom:10px;border-bottom:1px solid var(--divider)}
+h3{font-size:19px;font-weight:700}
+h4{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary)}
+p,ul,ol{margin:0}
+ul,ol{padding-left:20px}
+li+li{margin-top:4px}
+code{font:.85em var(--font-mono);background:var(--surface-sunken);border:1px solid var(--divider);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+button{font:inherit;color:inherit}
+.shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;max-width:1240px;margin:0 auto;padding-inline:24px;padding-block:32px 96px}
+nav.toc{position:sticky;top:24px;align-self:start;display:flex;flex-direction:column;gap:14px;font-size:15px}
+nav.toc a{display:block;color:var(--text-secondary);text-decoration:none;padding:3px 0}
+nav.toc a:hover{color:var(--text-primary);text-decoration:underline}
+.brandline{display:flex;align-items:center;gap:10px;font:700 15px var(--font-display)}
+.brandline svg{width:34px;height:34px;flex:none}
+main{display:flex;flex-direction:column;gap:64px;min-width:0}
+section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:24px}
+.col{max-width:68ch;display:flex;flex-direction:column;gap:12px}
+.lead{font-size:20px;color:var(--text-secondary)}
+.eyebrow{font:700 12px var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--text-accent)}
+.note{font-size:15px;color:var(--text-secondary)}
+.status{display:inline-block;font:700 11px var(--font-display);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--border-control);border-radius:4px;padding:1px 6px;color:var(--text-secondary);vertical-align:2px;white-space:nowrap}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{border:1px solid var(--divider);border-radius:var(--radius-card);background:var(--surface-panel);padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0;color:var(--text-primary)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;vertical-align:top;padding:8px 14px 8px 0;border-bottom:1px solid var(--divider)}
+th{font:700 13px var(--font-display);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.dd>div{border-top:3px solid var(--border-control);padding-top:10px;display:flex;flex-direction:column;gap:6px}
+.dd>div.do{border-top-color:var(--cat-primprod)}
+.dd>div.dont{border-top-color:var(--text-danger)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px}
+.wave{height:12px;background:var(--motif-color);opacity:.1;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M0 12V7q15-7 30 0t30 0 30 0 30 0V12Z'/%3E%3C/svg%3E") repeat-x 0 0/120px 12px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M0 12V7q15-7 30 0t30 0 30 0 30 0V12Z'/%3E%3C/svg%3E") repeat-x 0 0/120px 12px}
+.hex{background:var(--motif-color);opacity:.1;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27.713 48'%3E%3Cg fill='none' stroke='black' stroke-width='1.25'%3E%3Cpath d='M0 -16 13.856 -8V8L0 16-13.856 8V-8Z'/%3E%3Cpath d='M27.713 -16 41.569 -8V8L27.713 16 13.856 8V-8Z'/%3E%3Cpath d='M13.856 8 27.713 16V32L13.856 40 0 32V16Z'/%3E%3Cpath d='M0 32 13.856 40V56L0 64-13.856 56V40Z'/%3E%3Cpath d='M27.713 32 41.569 40V56L27.713 64 13.856 56V40Z'/%3E%3C/g%3E%3C/svg%3E") 0 0/27.713px 48px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27.713 48'%3E%3Cg fill='none' stroke='black' stroke-width='1.25'%3E%3Cpath d='M0 -16 13.856 -8V8L0 16-13.856 8V-8Z'/%3E%3Cpath d='M27.713 -16 41.569 -8V8L27.713 16 13.856 8V-8Z'/%3E%3Cpath d='M13.856 8 27.713 16V32L13.856 40 0 32V16Z'/%3E%3Cpath d='M0 32 13.856 40V56L0 64-13.856 56V40Z'/%3E%3Cpath d='M27.713 32 41.569 40V56L27.713 64 13.856 56V40Z'/%3E%3C/g%3E%3C/svg%3E") 0 0/27.713px 48px}
+.motif-box{position:relative;height:120px;border:1px solid var(--divider);border-radius:var(--radius-control);overflow:hidden;background:var(--surface-panel)}
+.motif-box>i{position:absolute;inset:0}
+.motif-box>i.wave{inset:auto 0 0 0;height:24px;-webkit-mask-size:240px 24px;mask-size:240px 24px}
+
+/* seal */
+.plate{background:#ffffff;border-radius:var(--radius-control);display:grid;place-items:center;padding:52px;border:1px solid var(--divider)}
+.plate img{display:block;width:120px;height:120px}
+.clear{outline:1px dashed #6e110f;outline-offset:30px}
+
+/* swatches */
+.sw4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-radius:var(--radius-card);overflow:hidden;border:1px solid var(--divider)}
+.sw4>div{padding:64px 14px 14px;font-size:14px;line-height:1.35;min-width:0}
+.sw4 b{display:block;font:700 16px var(--font-display)}
+@media (max-width:720px){.sw4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tok{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.tok>div{display:flex;flex-direction:column;gap:4px;font-size:13px;min-width:0}
+.tok i{height:40px;border-radius:6px;border:1px solid var(--border-control)}
+.tok code{border:0;background:none;padding:0;font-size:12px}
+.themebox{border-radius:var(--radius-card);padding:18px;background:var(--surface-map);color:var(--text-primary);border:1px solid var(--divider);display:flex;flex-direction:column;gap:14px;min-width:0}
+.rampbar{height:14px;border-radius:7px;background:linear-gradient(90deg,var(--ramp-0),var(--ramp-1),var(--ramp-2),var(--ramp-3),var(--ramp-4))}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:14px}
+.cats span{display:flex;align-items:center;gap:8px}
+.cats i{width:16px;height:16px;border-radius:4px;flex:none}
+
+/* type */
+.spec-d{font-family:var(--font-display)}
+.scale{display:grid;gap:6px}
+.scale div{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--divider);padding-bottom:6px}
+.scale small{flex:0 0 150px;font:12px var(--font-mono);color:var(--text-secondary)}
+.bars{display:flex;align-items:flex-end;gap:10px}
+.bars i{background:var(--fill-accent);border-radius:2px}
+.bars span{display:flex;flex-direction:column;align-items:center;gap:6px;font:12px var(--font-mono);color:var(--text-secondary)}
+
+/* ---- component specimens (the atlas's own shapes) ---- */
+.ex{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px;overflow-x:auto;border-radius:var(--radius-control);background:var(--surface-map);min-height:76px}
+.btn{height:40px;padding:0 16px;border:1px solid var(--border-control);border-radius:var(--radius-control);background:var(--fill-control);color:var(--text-primary);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--fill-accent);color:var(--text-on-accent);border-color:var(--border-accent);font-weight:700}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.sw{display:inline-flex;border:1px solid var(--border-control);border-radius:var(--radius-pill);overflow:hidden;background:var(--fill-control)}
+.sw button{border:0;background:none;padding:8px 14px;white-space:nowrap;color:var(--text-secondary);cursor:pointer}
+.sw button[aria-checked="true"]{background:var(--fill-accent);color:var(--text-on-accent);font-weight:700;box-shadow:inset 0 0 0 1px var(--border-accent);border-radius:var(--radius-pill)}
+.tabs{display:flex;gap:24px;border-bottom:1px solid var(--divider);flex:1;min-width:0}
+.tabs button{border:0;background:none;padding:10px 2px;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--text-secondary);cursor:pointer}
+.tabs button[aria-selected="true"]{border-bottom-color:var(--border-accent);color:var(--text-primary);font-weight:700}
+.spine{display:inline-flex;gap:4px;padding:4px;background:var(--surface-panel);border:1px solid var(--divider);border-radius:var(--radius-card);box-shadow:0 4px 12px var(--shadow-color)}
+.spine.v{flex-direction:column}
+.spine:not(.v) button{width:52px;font-size:11px}
+.spine button{width:64px;border:0;background:none;border-radius:var(--radius-control);padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;color:var(--text-secondary);cursor:pointer}
+.spine svg{width:22px;height:22px;fill:currentColor}
+.spine button[aria-current="true"]{background:var(--fill-accent);color:var(--text-on-accent);font-weight:700;box-shadow:inset 0 0 0 1px var(--border-accent)}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border-control);border-radius:var(--radius-pill);padding:4px 12px;font-size:14px;background:var(--fill-control)}
+.chip.accent{background:var(--fill-accent);color:var(--text-on-accent);border-color:var(--border-accent);font-weight:700}
+.chip.off{border-style:dashed;text-decoration:line-through;color:var(--icon-inactive);background:none}
+.select{display:inline-flex;justify-content:space-between;align-items:center;gap:24px;min-width:200px;height:40px;padding:0 12px;border:1px solid var(--border-control);border-radius:var(--radius-control);background:var(--surface-sunken)}
+.check{display:inline-flex;align-items:center;gap:8px}
+.check i{width:18px;height:18px;border-radius:4px;border:1px solid var(--border-control);background:var(--fill-control);display:grid;place-items:center;font-style:normal;font-size:13px;line-height:1}
+.layout{display:grid;grid-template-columns:64px 1fr 2fr;gap:8px;height:236px;padding:10px;border-radius:var(--radius-control);background:var(--surface-map)}
+.layout .spine{align-self:start}
+.layout .pane{border:1px solid var(--divider);border-radius:var(--radius-card);background:var(--surface-panel);padding:12px;display:flex;flex-direction:column;gap:8px;font-size:13px;min-width:0}
+.layout .pane b{font:700 14px var(--font-display)}
+.layout .mapph{border-radius:var(--radius-card);border:1px dashed var(--border-control);display:grid;place-items:center;color:var(--text-secondary);font-size:13px;position:relative}
+.sk{height:8px;border-radius:4px;background:var(--fill-track)}
+.legend{width:300px;max-width:100%;padding:12px 16px;background:var(--surface-panel);border:1px solid var(--divider);border-radius:var(--radius-card);box-shadow:0 4px 12px var(--shadow-color);display:flex;flex-direction:column}
+.legend b{font:700 14px var(--font-display)}
+.legend small{color:var(--text-secondary);font-size:12px}
+.hist{position:relative;padding-top:20px}
+.hist svg{display:block;width:100%;height:44px}
+.hist .mk{position:absolute;top:14px;bottom:-3px;left:19.4%;width:2px;background:var(--text-primary)}
+.hist .mk u{position:absolute;top:-15px;left:50%;transform:translateX(-50%);text-decoration:none;font:700 12px var(--font-body);background:var(--text-primary);color:var(--surface-panel);border-radius:4px;padding:0 5px}
+.mm{display:flex;justify-content:space-between;font-size:12px;color:var(--text-secondary);margin-top:4px;font-variant-numeric:tabular-nums}
+.popup{width:230px;padding:12px 14px;background:var(--surface-raised);border:1px solid var(--border-control);border-radius:var(--radius-card);box-shadow:0 4px 12px var(--shadow-color);display:flex;flex-direction:column;gap:6px;font-size:14px}
+.popup b{font:700 13px var(--font-display)}
+.popup span{display:flex;align-items:center;gap:8px}
+.popup i{width:14px;height:14px;border-radius:50%;border:1px solid var(--text-primary);background:#8fd0a0}
+.themebtn{border:1px solid var(--border-control);background:var(--fill-control);border-radius:var(--radius-pill);padding:6px 14px;cursor:pointer}
+footer{border-top:1px solid var(--divider);padding-top:20px;font-size:15px;color:var(--text-secondary);display:flex;flex-direction:column;gap:8px}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr;gap:24px;padding-inline:16px}
+  nav.toc{position:static;flex-direction:row;flex-wrap:wrap;gap:4px 16px}
+  nav.toc .brandline{flex-basis:100%}
+  .layout{grid-template-columns:64px 1fr}
+  .layout .mapph{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<nav class="toc" aria-label="Sections">
+  <div class="brandline">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 57.1 17.5v29L32 61 6.9 46.5v-29Z" fill="#001a57"/><path d="M6.9 40c6-7 13-7 19-1s14 7 21 0 8-4 10.2-2.5v10L32 61 6.9 46.5Z" fill="#e8c24a"/><path d="M10 30.5c5-6 11-6 16.5-1s13 6 19.5-.5 7-3.5 9-2.5" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/><path d="M32 3 57.1 17.5v29L32 61 6.9 46.5v-29Z" fill="none" stroke="var(--border-accent)" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    <span>MarineSensitivity</span>
+  </div>
+  <div>
+    <a href="#identity">Identity and seal</a>
+    <a href="#colour">Colour</a>
+    <a href="#type">Typography</a>
+    <a href="#motifs">Hexagon and wave</a>
+    <a href="#themes">Themes</a>
+    <a href="#data">Data colour</a>
+    <a href="#scale">Spacing, shape, motion</a>
+    <a href="#grammar">Control grammar</a>
+    <a href="#layout">Layout</a>
+    <a href="#components">Components</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#icons">Icons</a>
+    <a href="#access">Accessibility</a>
+    <a href="#words">Words</a>
+    <a href="#governance">Sources and governance</a>
+  </div>
+  <button class="themebtn" id="themeBtn" type="button">Switch theme</button>
+</nav>
+
+<main>
+
+<header class="col">
+  <span class="eyebrow">Brand and interface guide · updated 2026-09-30</span>
+  <h1>How MarineSensitivity apps look, and what each control means</h1>
+  <p class="lead">This page applies the Marine Minerals Administration Branding Guidelines (July 2026) to interactive software: the Marine Sensitivity Atlas first, and any app that follows it.</p>
+  <p>The bureau's guide is the authority on the seal, colours, typefaces and the two graphic elements. It does not cover screens, themes, data colour or controls. Those are set here, and each rule on this page is held in the Atlas by a token, a component or a test.</p>
+  <p class="note"><a href="MMA%20Branding%20Guide%202026.pdf">MMA Branding Guidelines, July 2026 (PDF)</a> · <a href="https://marinesensitivity.org/atlas/">Marine Sensitivity Atlas</a> · <a href="https://github.com/MarineSensitivity/atlas/blob/main/src/lib/brand/tokens.css">tokens.css</a> · <a href="https://github.com/MarineSensitivity/atlas/blob/main/docs/design/spec.md">Atlas design spec</a></p>
+</header>
+
+<section id="identity">
+  <h2>Identity and seal</h2>
+  <div class="grid g2">
+    <div class="col">
+      <p>The agency name is spelled <b>Marine Minerals Administration</b>, as on the seal, with <b>U.S. Department of the Interior</b> as the second line of a lockup.</p>
+      <p>The seal is used unmodified. The guide's rules, and how the Atlas meets them:</p>
+      <ul>
+        <li><b>Minimum size:</b> 0.75 in wide in print; at least 72 CSS px on screen.</li>
+        <li><b>Clear space:</b> the height of the offshore platform in the seal, on all four sides. On screen that is a quarter of the seal's height.</li>
+        <li><b>Background:</b> a plain one. The Atlas puts it on a white plate in both themes, never on a glass panel or over the map.</li>
+        <li><b>Versions:</b> full colour by default; one colour in a dark colour on a plain ground, sparingly; black and white rarely.</li>
+      </ul>
+      <h4>Where the seal appears in the Atlas</h4>
+      <ul>
+        <li>the About dialog, with the full lockup;</li>
+        <li>the header of a printed report;</li>
+        <li>the on-map "About this release" card, which is opaque and collapsed by default.</li>
+      </ul>
+      <p>It never appears in the 48 px top bar, which cannot hold a 72 px seal. The top bar carries the project's own mark instead.</p>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="plate"><img class="clear" src="mma-seal.svg" width="120" height="120" loading="lazy" alt="Seal of the Marine Minerals Administration, U.S. Department of the Interior"></div>
+      <p class="note">The dashed line marks the clear space. Nothing else enters it.</p>
+      <div class="card" style="flex-direction:row;align-items:center;gap:16px">
+        <svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" style="flex:none"><path d="M32 3 57.1 17.5v29L32 61 6.9 46.5v-29Z" fill="#001a57"/><path d="M6.9 40c6-7 13-7 19-1s14 7 21 0 8-4 10.2-2.5v10L32 61 6.9 46.5Z" fill="#e8c24a"/><path d="M10 30.5c5-6 11-6 16.5-1s13 6 19.5-.5 7-3.5 9-2.5" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/><path d="M32 3 57.1 17.5v29L32 61 6.9 46.5v-29Z" fill="none" stroke="var(--border-accent)" stroke-width="3.5" stroke-linejoin="round"/></svg>
+        <p><b>The project mark</b> is a wave in a hexagon, the seal's two graphic elements in one shape. It is the app icon and the top-bar mark. Its ring is Gold on the dark theme and Navy on the light theme.</p>
+      </div>
+    </div>
+  </div>
+  <div class="dd">
+    <div class="do"><h4>Do</h4><ul><li>Give the image both width and height so it cannot distort.</li><li>Load it lazily, from one source file.</li><li>Pair it with the agency line when there is room.</li></ul></div>
+    <div class="dont"><h4>Do not</h4><ul><li>Stretch, skew or squeeze it.</li><li>Add shadows or gradients.</li><li>Use greyscale, or a low-resolution copy.</li><li>Crop or remove any part.</li><li>Crowd it against another seal.</li></ul></div>
+  </div>
+</section>
+
+<section id="colour">
+  <h2>Colour</h2>
+  <div class="sw4">
+    <div style="background:#e8c24a;color:#001a57"><b>Gold</b>#E8C24A<br>RGB 232, 194, 74<br>CMYK 0, 16, 68, 9</div>
+    <div style="background:#173d6d;color:#ffffff"><b>Steel Blue</b>#173D6D<br>RGB 23, 61, 109<br>CMYK 100, 83, 31, 71</div>
+    <div style="background:#001a57;color:#ffffff"><b>Navy Blue</b>#001A57<br>RGB 0, 26, 87<br>CMYK 100, 70, 0, 66</div>
+    <div style="background:#6e110f;color:#ffffff"><b>Crimson Red</b>#6E110F<br>RGB 110, 17, 15<br>CMYK 32, 98, 100, 47</div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Colour</th><th>Job on screen</th><th>Limit</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gold</b></td><td>The fill of whatever is active: the selected switch segment, the current spine entry, a primary button. Accent text, focus ring and motif tint on the dark theme.</td><td>Never text or a thin line on a light ground: 1.7:1 on white.</td></tr>
+      <tr><td><b>Steel Blue</b></td><td>Accent text, focus ring and motif tint on the light theme (10.9:1 on white).</td><td>Invisible at 10% over navy, so the dark theme tints motifs Gold.</td></tr>
+      <tr><td><b>Navy Blue</b></td><td>Body text on the light theme. The label on any Gold fill, in both themes (9.5:1). The ring around an active control on the light theme.</td><td></td></tr>
+      <tr><td><b>Crimson Red</b></td><td>Error and destructive text on the light theme (12:1 on white).</td><td>Too dark on navy; the dark theme uses a light tint, <code>#FF9C94</code>.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="col"><b>Brand colours are chrome; data colours are data.</b> Gold, Steel, Navy and Crimson never encode a value on the map, in a chart or in a table. Scores and categories have their own colours, below.</p>
+</section>
+
+<section id="type">
+  <h2>Typography</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Headlines and display</h4>
+      <p class="spec-d" style="font-size:44px;font-weight:700;line-height:1">Mm <span style="font-weight:400">Mm</span></p>
+      <p><b>Century Gothic</b>, Bold for headlines, never lighter than Regular. Geometric, all-caps for section titles, as in the guide.</p>
+      <p class="note">On the web it is a licensed face, so it is used when the reader's machine has it and never redistributed. The open fallback is Jost.</p>
+    </div>
+    <div class="card">
+      <h4>Body and supplementary headings</h4>
+      <p style="font-size:44px;font-weight:700;line-height:1">Mm <span style="font-weight:400">Mm</span> <i style="font-weight:400">Mm</i></p>
+      <p><b>Calibri</b>, for running text, labels, tables and controls.</p>
+      <p class="note">Also licensed, so also local-first. The open fallback is Carlito, which has the same metrics and does not shift layout.</p>
+    </div>
+  </div>
+  <div class="scale">
+    <div><small>28 · display</small><span class="spec-d" style="font-size:28px;font-weight:700">Report and dialog titles</span></div>
+    <div><small>20 · display</small><span class="spec-d" style="font-size:20px;font-weight:700">Panel title</span></div>
+    <div><small>16 · body</small><span style="font-size:16px">Panel body and phone body text</span></div>
+    <div><small>14 · body</small><span style="font-size:14px">Default body text on a desktop panel</span></div>
+    <div><small>13 · body</small><span style="font-size:13px">Dense table cells and chips</span></div>
+    <div><small>12 · body</small><span style="font-size:12px">Legends, captions and table meta</span></div>
+  </div>
+  <p class="col note">Line height 1.2 for display and 1.5 for body; display tracking 0.01em. Numbers that line up in columns use tabular figures. Scientific names are italic.</p>
+</section>
+
+<section id="motifs">
+  <h2>Hexagon and wave</h2>
+  <div class="grid g2">
+    <div class="col">
+      <p>The guide takes two elements from the seal and makes them secondary graphics: the <b>hexagon pattern</b>, in Steel Blue or Gold, and the <b>wave</b>, in Steel Blue and Navy. Both are used at <b>10% opacity</b>, as texture that does not compete with content.</p>
+      <p>In the app they are masks over one tint token, Gold on the dark theme and Steel on the light theme, so they can never carry a stray colour. A test fails if the opacity is raised above 10%.</p>
+      <ul>
+        <li><b>Hexagon:</b> panel-header texture, empty states, the loading honeycomb, the report cover band. Also a shape: the project mark and category swatches.</li>
+        <li><b>Wave:</b> the top bar's lower edge, the phone sheet's upper edge, dialog dividers, report header and footer.</li>
+        <li>Neither sits behind more than one line of body text.</li>
+      </ul>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="motif-box"><i class="hex"></i></div>
+      <div class="motif-box"><i class="wave"></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="themes">
+  <h2>Themes</h2>
+  <p class="col">Two themes, both first-class. The app follows the reader's system setting and falls back to the dark theme. Components read tokens only; a colour literal in a component fails a build check.</p>
+  <div class="grid g2">
+    <div class="themebox t-navy">
+      <h3>navy</h3>
+      <p class="note">Dark basemap, white text, Gold accent.</p>
+      <div class="tok">
+        <div><i style="background:var(--surface-map)"></i>Map ground<code>#0B1635</code></div>
+        <div><i style="background:var(--surface-panel)"></i>Panel<code>#142446</code></div>
+        <div><i style="background:var(--surface-raised)"></i>Raised<code>#1C2F57</code></div>
+        <div><i style="background:var(--surface-sunken)"></i>Sunken<code>#0A1533</code></div>
+        <div><i style="background:var(--text-primary)"></i>Text<code>#FFFFFF</code></div>
+        <div><i style="background:var(--text-secondary)"></i>Secondary text<code>#C7D2E8</code></div>
+        <div><i style="background:var(--fill-accent)"></i>Active fill<code>#E8C24A</code></div>
+        <div><i style="background:var(--border-control)"></i>Control border<code>#8494BD</code></div>
+        <div><i style="background:var(--text-link)"></i>Link<code>#9CC8F2</code></div>
+        <div><i style="background:var(--text-danger)"></i>Danger text<code>#FF9C94</code></div>
+      </div>
+    </div>
+    <div class="themebox t-paper">
+      <h3>paper</h3>
+      <p class="note">Light basemap, Navy text, Gold fill with a Navy ring, warm neutrals.</p>
+      <div class="tok">
+        <div><i style="background:var(--surface-map)"></i>Map ground<code>#EAEEF3</code></div>
+        <div><i style="background:var(--surface-panel)"></i>Panel<code>#FFFFFF</code></div>
+        <div><i style="background:var(--fill-control)"></i>Control fill<code>#F8F1DC</code></div>
+        <div><i style="background:var(--surface-sunken)"></i>Sunken<code>#FBF6E6</code></div>
+        <div><i style="background:var(--text-primary)"></i>Text<code>#001A57</code></div>
+        <div><i style="background:var(--text-secondary)"></i>Secondary text<code>#3D4C74</code></div>
+        <div><i style="background:var(--fill-accent)"></i>Active fill<code>#E8C24A</code></div>
+        <div><i style="background:var(--border-control)"></i>Control border<code>#7A6A45</code></div>
+        <div><i style="background:var(--text-link)"></i>Link<code>#15467F</code></div>
+        <div><i style="background:var(--text-danger)"></i>Danger text<code>#6E110F</code></div>
+      </div>
+    </div>
+  </div>
+  <p class="col note">Panels over the map are glass: the panel colour at 88% with a 10 px blur. Contrast is measured against the worst case of that glass over the map, not against the panel colour alone. Dialogs, popovers and the seal's plate are opaque.</p>
+</section>
+
+<section id="data">
+  <h2>Data colour</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Score ramp</h3>
+      <div class="rampbar"></div>
+      <div class="mm"><span>low</span><span>high</span></div>
+      <p>Spectral, reversed: blue is low, red is high. It matches the published rasters. The legend always prints the end values, and a table mirrors the map, because a continuous ramp cannot meet 3:1 from stop to stop.</p>
+      <p class="note">Stops: <code>#3288BD</code> <code>#99D594</code> <code>#FFFFBF</code> <code>#FC8D59</code> <code>#D53E4F</code>. Other palettes are offered in the Layers tab; this is the default.</p>
+    </div>
+    <div class="card">
+      <h3>Species categories</h3>
+      <p>Eight hues, chosen to stay distinct under colour-vision deficiency. One table serves the flower plot, the treemap, table chips, the legend and the report. The hue is the identity; the lightness follows the theme.</p>
+      <div class="grid g2" style="gap:10px">
+        <div class="themebox t-navy" style="padding:12px"><div class="cats"><span><i style="background:var(--cat-bird)"></i>Bird</span><span><i style="background:var(--cat-coral)"></i>Coral</span><span><i style="background:var(--cat-fish)"></i>Fish</span><span><i style="background:var(--cat-invertebrate)"></i>Invertebrate</span><span><i style="background:var(--cat-mammal)"></i>Mammal</span><span><i style="background:var(--cat-other)"></i>Other</span><span><i style="background:var(--cat-turtle)"></i>Turtle</span><span><i style="background:var(--cat-primprod)"></i>Primary productivity</span></div></div>
+        <div class="themebox t-paper" style="padding:12px"><div class="cats"><span><i style="background:var(--cat-bird)"></i>Bird</span><span><i style="background:var(--cat-coral)"></i>Coral</span><span><i style="background:var(--cat-fish)"></i>Fish</span><span><i style="background:var(--cat-invertebrate)"></i>Invertebrate</span><span><i style="background:var(--cat-mammal)"></i>Mammal</span><span><i style="background:var(--cat-other)"></i>Other</span><span><i style="background:var(--cat-turtle)"></i>Turtle</span><span><i style="background:var(--cat-primprod)"></i>Primary productivity</span></div></div>
+      </div>
+    </div>
+  </div>
+  <p class="col"><b>Selection is pink</b> (<code>#FF1FA3</code>), a colour that is in neither the brand palette nor any data ramp, so a selected cell or area reads against every layer.</p>
+</section>
+
+<section id="scale">
+  <h2>Spacing, shape, motion</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Spacing</h3>
+      <div class="bars"><span><i style="width:4px;height:4px"></i>4</span><span><i style="width:8px;height:8px"></i>8</span><span><i style="width:12px;height:12px"></i>12</span><span><i style="width:16px;height:16px"></i>16</span><span><i style="width:24px;height:24px"></i>24</span><span><i style="width:32px;height:32px"></i>32</span></div>
+      <p class="note">Six steps. Fixed sizes: top bar 48, spine 56 to 64, side panel 380 (resizable 320 to 720), minimum touch target 44, seal minimum 72.</p></div>
+    <div class="card"><h3>Shape</h3>
+      <div style="display:flex;gap:10px;align-items:center"><i style="width:56px;height:40px;border:1px solid var(--border-control);border-radius:12px"></i><i style="width:56px;height:40px;border:1px solid var(--border-control);border-radius:8px"></i><i style="width:56px;height:28px;border:1px solid var(--border-control);border-radius:999px"></i></div>
+      <p class="note">Card 12, control 8, pill 999. Three shadow levels: resting chrome, floating cards, overlays. The shadow colour is a token; black shadows belong to dark themes only.</p></div>
+    <div class="card"><h3>Motion</h3>
+      <p>150 ms for a control changing state, 200 ms for a panel or sheet, one ease-out curve.</p>
+      <p class="note">Both become 0 ms when the reader asks for reduced motion. The loader is seven hexagons pulsing in turn; with reduced motion it is a still honeycomb and the status text.</p></div>
+  </div>
+</section>
+
+<section id="grammar">
+  <h2>Control grammar</h2>
+  <div class="col">
+    <p class="lead">One look, one job. A look never stands for two different things.</p>
+    <p>Adopted 2026-09-30, after the same gold pill had come to mean "change the data" in one place and "change what this pane shows" in another. <span class="status">Atlas 0.10.81 to 0.10.83, in build</span></p>
+  </div>
+  <div class="grid g3">
+    <div class="card">
+      <h3>Switch</h3>
+      <div class="ex"><div class="sw" role="radiogroup" aria-label="Unit"><button role="radio" aria-checked="true">Raster cells</button><button role="radio" aria-checked="false">Program areas</button></div></div>
+      <p><b>Changes the data.</b> Afterwards the map, the legend and the table all show different numbers.</p>
+      <ul><li>Scores | Species</li><li>Raster cells | Program areas</li><li>A species' model input</li><li>Original | Interpolated</li></ul>
+      <p class="note">A pill. Gold fill and Navy label on the selected segment. Two to four options, one always selected. <code>Segmented.svelte</code>, <code>role="radiogroup"</code>.</p>
+    </div>
+    <div class="card">
+      <h3>Tabs</h3>
+      <div class="ex"><div class="tabs" role="tablist" aria-label="Table view"><button role="tab" aria-selected="true">Species</button><button role="tab" aria-selected="false">Zones</button><button role="tab" aria-selected="false">Composition</button></div></div>
+      <p><b>Changes the view of the same data</b>, inside one surface. The content under the line swaps; the selection does not.</p>
+      <ul><li>Table: Species · Zones · Composition</li></ul>
+      <p class="note">Plain labels on a hairline. The selected one is bold with a 3 px underline: Gold on the dark theme, Navy on the light. <code>Tabs.svelte</code>, <code>role="tablist"</code>, arrow keys move.</p>
+    </div>
+    <div class="card">
+      <h3>Spine</h3>
+      <div class="ex"><nav class="spine" aria-label="Surfaces"><button aria-current="true"><svg viewBox="0 0 24 24"><path d="M12,16L19.36,10.27L21,9L12,2L3,9L4.63,10.27M12,18.54L4.62,12.81L3,14.07L12,21.07L21,14.07L19.37,12.8L12,18.54Z"/></svg>Layers</button><button><svg viewBox="0 0 24 24"><path d="M8.9 12a3.1 3.1 0 1 0 6.2 0 3.1 3.1 0 1 0-6.2 0ZM11.37 9.48Q9.41 6.19 12 1.4Q14.59 6.19 12.63 9.48ZM13.34 9.77Q13.29 8.64 16.24 7.76Q15.36 10.71 14.23 10.66ZM14.52 11.37Q16.93 9.8 21 12Q16.93 14.2 14.52 12.63ZM14.23 13.34Q15.92 13.51 16.95 16.95Q13.51 15.92 13.34 14.23ZM12.63 14.52Q14.39 17.37 12 21.8Q9.61 17.37 11.37 14.52ZM10.66 14.23Q10.84 15.02 8.18 15.82Q8.98 13.16 9.77 13.34ZM9.48 12.63Q7.51 14 3.8 12Q7.51 10 9.48 11.37ZM9.77 10.66Q8.3 10.58 7.33 7.33Q10.58 8.3 10.66 9.77Z"/></svg>Details</button><button><svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>Table</button><button><svg viewBox="0 0 24 24"><path d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z"/></svg>Report</button></nav></div>
+      <p><b>Changes the surface.</b> Each entry opens a different working surface.</p>
+      <ul><li>Layers · Details · Table · Report</li><li>Same four, same order, both lenses, every screen size</li></ul>
+      <p class="note">Icon over label. Gold fill and Navy label on the current entry, <code>aria-current</code>. <code>Rail.svelte</code>.</p>
+    </div>
+  </div>
+  <div class="col">
+    <h3>How to choose</h3>
+    <ul>
+      <li>Would the map, the legend and the table all show different numbers afterwards? It is a <b>switch</b>.</li>
+      <li>Is the same selection only being shown another way, in the same pane? It is <b>tabs</b>.</li>
+      <li>Does it open a different place to work? It is a <b>spine</b> entry.</li>
+      <li>None of these? It is a button, a select or a checkbox. There is no fourth toggle style.</li>
+    </ul>
+  </div>
+  <div class="dd">
+    <div class="do"><h4>Do</h4><ul><li>Keep tabs to one level.</li><li>Name a surface for what the reader gets there: "Details", not the name of one chart.</li><li>Use a select once a switch would need more than four options.</li></ul></div>
+    <div class="dont"><h4>Do not</h4><ul><li>Style tabs as a pill, or a switch as an underline. The shape is the meaning.</li><li>Put tabs inside tabs. One level is really a spine entry or a switch.</li><li>Give one lens its own spine entry. If a surface only fits one lens, rename it until it fits both.</li></ul></div>
+  </div>
+</section>
+
+<section id="layout">
+  <h2>Layout</h2>
+  <div class="grid g2">
+    <div class="col">
+      <p><b>The map is the page.</b> Everything else floats over it as cards. There is no fixed sidebar.</p>
+      <ul>
+        <li><b>The spine is attached to the panel it controls</b>, on the panel's outer edge, and moves with it. The pair docks <b>left</b> by default; one button moves it to the other side.</li>
+        <li><b>Selecting the current entry again collapses the panel.</b> The spine stays. The header needs only "move to the other side" and "collapse".</li>
+        <li><b>A surface takes the width its content needs.</b> Layers, Details and Report open as a side panel. Table takes the whole stage, with a "Map" button to return.</li>
+        <li><b>The panel header says what is being shown</b> ("Score · Raster cells", "Cell 3058375"), not the name of the spine entry beside it.</li>
+        <li><b>The legend sits on the opposite side</b> from the panel, and every camera move allows for the panel, the legend and the phone sheet.</li>
+        <li><b>On a phone</b> (under 900 px) the spine is the bottom bar and the panel is a sheet above it, with peek, half and full heights. Table opens the sheet at full height.</li>
+      </ul>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="layout" role="img" aria-label="Diagram: the spine on the left screen edge, the panel beside it, the map filling the rest">
+        <nav class="spine v" aria-hidden="true"><button aria-current="true" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12,16L19.36,10.27L21,9L12,2L3,9L4.63,10.27M12,18.54L4.62,12.81L3,14.07L12,21.07L21,14.07L19.37,12.8L12,18.54Z"/></svg></button><button tabindex="-1"><svg viewBox="0 0 24 24"><path d="M8.9 12a3.1 3.1 0 1 0 6.2 0 3.1 3.1 0 1 0-6.2 0ZM11.37 9.48Q9.41 6.19 12 1.4Q14.59 6.19 12.63 9.48ZM14.52 11.37Q16.93 9.8 21 12Q16.93 14.2 14.52 12.63ZM12.63 14.52Q14.39 17.37 12 21.8Q9.61 17.37 11.37 14.52ZM9.48 12.63Q7.51 14 3.8 12Q7.51 10 9.48 11.37Z"/></svg></button><button tabindex="-1"><svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg></button><button tabindex="-1"><svg viewBox="0 0 24 24"><path d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z"/></svg></button></nav>
+        <div class="pane"><b>Score · Raster cells</b><span class="sk" style="width:70%"></span><span class="sk"></span><span class="sk" style="width:85%"></span><span class="sk" style="width:60%"></span></div>
+        <div class="mapph">map</div>
+      </div>
+      <p class="note">Spine and panel are one object at the screen edge. <span class="status">in build</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="components">
+  <h2>Components</h2>
+  <p class="col">Every component lives in <code>atlas/src/lib/ui/</code> and is shown in both themes at three widths in the Atlas gallery, which CI compares against saved screenshots. States that mean something are also in the accessibility tree, never in colour alone.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Button</h3>
+      <div class="ex"><button class="btn primary" type="button">Open report</button><button class="btn" type="button">Share</button><button class="btn" type="button" disabled>Add to report</button></div>
+      <p>One primary (Gold) button per surface, for the action the surface exists for. Everything else is a plain button. A disabled button says why in a tooltip.</p></div>
+    <div class="card"><h3>Select and checkbox</h3>
+      <div class="ex"><span class="select">Score <span aria-hidden="true">▾</span></span><span class="check"><i>✓</i>Zoom to layer on change</span></div>
+      <p>A select for one choice among many (layer, palette, Program Area). A checkbox for a setting that is on or off. Neither is a switch: they do not get the Gold pill.</p></div>
+    <div class="card"><h3>Chip and layer pill</h3>
+      <div class="ex"><span class="chip accent">Merged</span><span class="chip">AquaMaps</span><span class="chip off" title="Feeds the merged model, but this release publishes no surface for it">FWS Range</span><span class="chip">MMPA · floor 20</span></div>
+      <p>Chips label; pills choose. An unavailable pill is dashed and struck through, is marked disabled for assistive technology, and its tooltip says why.</p></div>
+    <div class="card"><h3>Click popup</h3>
+      <div class="ex"><div class="popup"><b>Cell 3058375 · 33.325° N, 122.925° W</b><span><i></i>Score 18</span><a href="#patterns">Details</a></div></div>
+      <p>Opaque, anchored to the click. It states what was clicked and its value, in the layer's own colour, and links to Details. It carries no chart.</p></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Component</th><th>Job</th><th>States and accessibility</th></tr></thead>
+    <tbody>
+      <tr><td><code>Rail</code>, <code>RailButton</code></td><td>The spine.</td><td>Hover fill; current = Gold fill, ring and <code>aria-current</code>; roving tab index, arrow keys.</td></tr>
+      <tr><td><code>Segmented</code></td><td>The switch.</td><td>Selected = Gold fill, ring, bold; <code>radiogroup</code>.</td></tr>
+      <tr><td><code>Tabs</code> <span class="status">in build</span></td><td>Tabs inside a surface.</td><td>Selected = bold and underline; <code>tablist</code>, arrow keys, Home and End.</td></tr>
+      <tr><td><code>Panel</code>, <code>Sheet</code></td><td>The side panel (desktop) and bottom sheet (phone).</td><td>Glass card; header controls are buttons with names; Esc collapses; the scroll region is focusable.</td></tr>
+      <tr><td><code>Legend</code>, <code>LegendChip</code></td><td>The colour ramp, its end values and the layer's histogram. A chip opens it on a phone.</td><td>A labelled region; the histogram has a text label and the marked value is also in text.</td></tr>
+      <tr><td><code>DataTable</code></td><td>Sortable, filterable tables; the non-visual twin of the map.</td><td>Column sort buttons, column filters, tabular figures, row count announced when it loads.</td></tr>
+      <tr><td><code>Flower</code></td><td>The flower plot: one petal per component score around the composite.</td><td>Label carries the composite and points to the component table beside it.</td></tr>
+      <tr><td><code>Treemap</code></td><td>Composition by category.</td><td>Labels on category fills use the on-category text colour; a table twin.</td></tr>
+      <tr><td><code>Select</code>, <code>Menu</code>, <code>Popover</code></td><td>One choice among many; action lists; short explanations.</td><td><code>aria-haspopup</code>, Esc and outside click close, focus returns to the trigger.</td></tr>
+      <tr><td><code>Modal</code></td><td>Welcome, glossary, version picker, feedback, About.</td><td>Opaque; focus trap and return; Esc closes.</td></tr>
+      <tr><td><code>Accordion</code></td><td>Disclosure rows, such as Data and Outlines in Layers.</td><td><code>aria-expanded</code>; a right chevron that turns, distinct from the reorder arrows.</td></tr>
+      <tr><td><code>Chip</code>, <code>Pill</code>, <code>VersionBadge</code></td><td>Labels, choices, the release chip.</td><td>See above; the PREVIEW chip is Gold.</td></tr>
+      <tr><td><code>Toast</code>, <code>Announcer</code>, <code>HealthBanner</code></td><td>Results, status for screen readers, outage notice.</td><td>One polite live region; the banner sits in the page flow, never over the top bar.</td></tr>
+      <tr><td><code>Honeycomb</code></td><td>The loader.</td><td>Seven pulsing hexagons; still under reduced motion, with the status text.</td></tr>
+      <tr><td><code>About</code></td><td>The seal lockup and release attribution.</td><td>Opaque white plate for the seal.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="patterns">
+  <h2>Patterns</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>The legend carries the layer's histogram</h3>
+      <div class="ex"><div class="legend"><b>Score</b><small>Raster cells · whole layer</small><div class="hist"><svg id="histSvg" viewBox="0 0 268 44" preserveAspectRatio="none" role="img" aria-label="Distribution of values across the whole layer (example shape)"></svg><div class="rampbar" style="height:10px"></div><i class="mk"><u>18</u></i></div><div class="mm"><span>0</span><span>93</span></div></div></div>
+      <p>A histogram of a layer's values belongs to the layer, so it sits in the legend, above the ramp, on the ramp's axis, in the ramp's colours. It covers the whole layer and does not change as the reader clicks. A marker shows the clicked value. <span class="status">Atlas 0.10.80, in build</span></p>
+      <p class="note">The bar shape here is an example.</p>
+    </div>
+    <div class="card">
+      <h3>Click, inspect, tabulate, report</h3>
+      <ol>
+        <li><b>Click</b> a cell or a Program Area. It is outlined in pink and becomes the "last clicked" place.</li>
+        <li><b>Details</b> shows its breakdown: the flower plot in Scores, the species information in Species.</li>
+        <li><b>Table</b> lists the species for it, at full width.</li>
+        <li><b>Report</b> keeps an explicit list of places. A new click replaces only the last-clicked slot, never a place the reader added.</li>
+      </ol>
+      <p class="note">Each surface says in one sentence what it is showing, for example "Reporting on the last clicked place. Add it to keep it."</p>
+    </div>
+    <div class="card">
+      <h3>Report is one flow</h3>
+      <p>Places at the top, ways to add a place below, and the primary "Open report" button pinned at the bottom with the sentence that says what it will report on. No sub-tabs. <span class="status">in build</span></p>
+    </div>
+    <div class="card">
+      <h3>The link is the view</h3>
+      <p>Everything a shared link should reproduce lives in the URL: release, lens, layer, selection, places and the arrangement of the panel. A control whose state matters to a colleague must write it there.</p>
+    </div>
+  </div>
+</section>
+
+<section id="icons">
+  <h2>Icons</h2>
+  <div class="grid g2">
+    <div class="col">
+      <p>Icons come from Material Design Icons, 24 px grid, one colour (the text colour of their control), and are imported by name. Path data is never typed by hand: the first attempt from memory got none of sixteen right.</p>
+      <p>One glyph is bespoke. The <b>flower</b> is a circle with eight petals of clearly different lengths, because that is what the flower plot draws: the composite in the centre and one petal per component.</p>
+      <p class="note">The full name-to-icon map is in the <a href="https://github.com/MarineSensitivity/atlas/blob/main/docs/design/spec.md">Atlas design spec</a>, section 6.</p>
+    </div>
+    <div class="ex" style="gap:22px;justify-content:center">
+      <svg viewBox="0 0 24 24" width="72" height="72" fill="currentColor" role="img" aria-label="The flower glyph"><path d="M8.9 12a3.1 3.1 0 1 0 6.2 0 3.1 3.1 0 1 0-6.2 0ZM11.37 9.48Q9.41 6.19 12 1.4Q14.59 6.19 12.63 9.48ZM13.34 9.77Q13.29 8.64 16.24 7.76Q15.36 10.71 14.23 10.66ZM14.52 11.37Q16.93 9.8 21 12Q16.93 14.2 14.52 12.63ZM14.23 13.34Q15.92 13.51 16.95 16.95Q13.51 15.92 13.34 14.23ZM12.63 14.52Q14.39 17.37 12 21.8Q9.61 17.37 11.37 14.52ZM10.66 14.23Q10.84 15.02 8.18 15.82Q8.98 13.16 9.77 13.34ZM9.48 12.63Q7.51 14 3.8 12Q7.51 10 9.48 11.37ZM9.77 10.66Q8.3 10.58 7.33 7.33Q10.58 8.3 10.66 9.77Z"/></svg>
+      <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor" aria-hidden="true"><path d="M12,16L19.36,10.27L21,9L12,2L3,9L4.63,10.27M12,18.54L4.62,12.81L3,14.07L12,21.07L21,14.07L19.37,12.8L12,18.54Z"/></svg>
+      <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor" aria-hidden="true"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>
+      <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor" aria-hidden="true"><path d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z"/></svg>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <h2>Accessibility</h2>
+  <p class="col">The bureau's guide requires every product to meet or exceed Section 508. For these apps that means WCAG 2.1 AA, checked by tools on every build and by hand on every release.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Rule</th><th>Value</th><th>Held by</th></tr></thead>
+    <tbody>
+      <tr><td>Text contrast</td><td class="num">at least 4.5:1</td><td>A script that reads the token pairs in both themes and fails the build under the line.</td></tr>
+      <tr><td>Borders, icons, focus rings, fills that carry state</td><td class="num">at least 3:1</td><td>The same script. A Gold fill on white is 1.7:1, so its Navy ring carries the state.</td></tr>
+      <tr><td>Focus</td><td class="num">2 px ring, 2 px offset</td><td>Gold on the dark theme, Steel on the light.</td></tr>
+      <tr><td>Touch targets</td><td class="num">at least 44 px</td><td>Raised automatically on touch devices.</td></tr>
+      <tr><td>Keyboard</td><td>everything reachable and operable</td><td>Arrow keys within the spine, a switch and tabs; Esc closes the top layer; focus returns to the trigger.</td></tr>
+      <tr><td>Colour is never the only signal</td><td></td><td>State is also in the accessibility tree; disabled controls explain themselves; every chart has a table twin.</td></tr>
+      <tr><td>Zoom and motion</td><td class="num">200% without sideways scroll</td><td>Motion drops to 0 ms on request.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="words">
+  <h2>Words</h2>
+  <div class="col">
+    <ul>
+      <li><b>One name per thing, everywhere.</b> A Program Area's name is resolved by one function and appears identically in search, tooltip, flower title, table header, report and download.</li>
+      <li><b>Say what is being shown.</b> "Species in GOA Program Area A (GAA)", "Reporting on 2 places", "Raster cells · whole layer".</li>
+      <li><b>Say why something is unavailable</b>, in the control's tooltip, in plain words.</li>
+      <li><b>Absence is stated, not implied.</b> A species card shows both statutes every time: "MMPA · floor 20" for a marine mammal, "MBTA · not applicable" for a turtle.</li>
+      <li><b>Sentence case</b> for labels and buttons. All-caps is for section titles in the display face only.</li>
+      <li><b>Scientific names in italics</b>; common names as published.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="governance">
+  <h2>Sources and governance</h2>
+  <div class="col">
+    <p>The bureau's Office of Communication owns the brand. Its guide cannot cover every case, and exceptions to it need that office's written approval. Nothing on this page overrides the guide; it extends the guide to screens.</p>
+    <ul>
+      <li><b>Seal, colours, typefaces, hexagon, wave:</b> <a href="MMA%20Branding%20Guide%202026.pdf">MMA Branding Guidelines, July 2026</a>.</li>
+      <li><b>Tokens:</b> <code>atlas/src/lib/brand/tokens.css</code> is the single source of values. This page copies them; if the two disagree, the file is right.</li>
+      <li><b>Component behaviour:</b> <code>atlas/docs/design/spec.md</code> and the Atlas gallery.</li>
+      <li><b>Control grammar, plain text:</b> <a href="control-grammar.html">control-grammar</a>.</li>
+    </ul>
+    <h3>Changes</h3>
+    <ul>
+      <li><b>2026-09-30:</b> control grammar adopted; spine attached to the panel and docked left; Table at full stage; Report as one flow; histogram moved from the click popup to the legend.</li>
+      <li><b>2026-09-21:</b> agency name and seal approved for the Atlas; the light theme moved from slate to warm neutrals with Gold fills.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wave" style="opacity:.35;margin-bottom:8px"></div>
+  <span>Marine Minerals Administration · U.S. Department of the Interior</span>
+  <span><a href="../">MarineSensitivity.org</a></span>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var next = root.className === "t-navy" ? "paper" : "navy";
+    root.className = "t-" + next;
+    try { localStorage.setItem("ms-brand-theme", next); } catch (e) {}
+  });
+  // example histogram: bars take the ramp's colour at their position
+  var R = ["#3288bd", "#99d594", "#ffffbf", "#fc8d59", "#d53e4f"];
+  function ramp(t) {
+    var x = Math.max(0, Math.min(1, t)) * 4, i = Math.min(3, Math.floor(x)), f = x - i;
+    function c(k) { return Math.round(parseInt(R[i].substr(k, 2), 16) * (1 - f) + parseInt(R[i + 1].substr(k, 2), 16) * f); }
+    return "rgb(" + c(1) + "," + c(3) + "," + c(5) + ")";
+  }
+  var n = 40, W = 268, H = 44, b = [], mx = 0, out = "", i;
+  for (i = 0; i < n; i++) { var t = (i + 0.5) / n; b[i] = Math.pow(t, 1.3) * Math.exp(-t * 7) + 0.004; mx = Math.max(mx, b[i]); }
+  for (i = 0; i < n; i++) {
+    var h = b[i] / mx * H, w = W / n;
+    out += '<rect x="' + (i * w + 0.5).toFixed(1) + '" y="' + (H - h).toFixed(1) + '" width="' + (w - 1).toFixed(1) + '" height="' + h.toFixed(1) + '" fill="' + ramp((i + 0.5) / n) + '"/>';
+  }
+  document.getElementById("histSvg").innerHTML = out;
+})();
+</script>
+</body>
+</html>
