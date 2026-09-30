@@ -3,6 +3,8 @@ project:
   resources:
     - CNAME
     - branding/mma-seal.svg
+    - branding/index.html
+    - "branding/MMA Branding Guide 2026.pdf"
 
 website:
   title: "MarineSensitivity.org"
