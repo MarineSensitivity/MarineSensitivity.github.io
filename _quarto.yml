@@ -5,6 +5,10 @@ project:
     - branding/mma-seal.svg
     - branding/index.html
     - "branding/MMA Branding Guide 2026.pdf"
+    # the STAC root catalog, aliased here (stac/update.sh regenerates it from the
+    # canonical tree at file.marinesensitivity.org/stac)
+    - stac/catalog.json
+    - stac/index.html
 
 website:
   title: "MarineSensitivity.org"
