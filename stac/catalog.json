@@ -1,0 +1,50 @@
+{
+  "type": "Catalog",
+  "stac_version": "1.0.0",
+  "id": "marinesensitivity",
+  "title": "MarineSensitivity STAC Catalog",
+  "description": "Discovery + provenance catalog for MarineSensitivity species distribution model products, using the sdm STAC extension.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://marinesensitivity.org/stac/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "https://marinesensitivity.org/stac/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://file.marinesensitivity.org/stac/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "service-desc",
+      "href": "https://stac-api.marinesensitivity.org/",
+      "type": "application/json",
+      "title": "searchable STAC API (one Item per model)"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v7/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v7b/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v8/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v9/collection.json",
+      "type": "application/json"
+    }
+  ]
+}

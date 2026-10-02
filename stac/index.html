@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MarineSensitivity STAC catalog</title>
+<style>
+  :root { --fg:#1a1a1a; --muted:#6b7280; --bd:#e5e7eb; --bg:#fff; --acc:#0b6bcb }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e5e7eb; --muted:#9ca3af; --bd:#374151; --bg:#111827; --acc:#60a5fa } }
+  body { margin:0; padding:2rem 1rem; background:var(--bg); color:var(--fg);
+         font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif }
+  main { max-width:44rem; margin:0 auto }
+  h1 { font-size:1.4rem; margin:0 0 .5rem }
+  p { margin:.6rem 0 } .muted { color:var(--muted); font-size:.92rem }
+  a { color:var(--acc) } code { background:var(--bd); padding:.05rem .3rem; border-radius:4px; font-size:.9em }
+  li { margin:.45rem 0 } pre { background:var(--bd); padding:.75rem; border-radius:6px; overflow-x:auto; font-size:.85rem }
+</style>
+</head>
+<body>
+<main>
+<h1>MarineSensitivity STAC catalog</h1>
+<p>A <a href="https://stacspec.org/">SpatioTemporal Asset Catalog</a> of the species distribution
+models behind the Marine Sensitivity Toolkit, one collection tree per release, described with the
+<a href="https://github.com/MarineSensitivity/stac-sdm">sdm extension</a>.</p>
+<ul>
+  <li><a href="catalog.json">catalog.json</a> &mdash; the root catalog (static JSON)</li>
+  <li><a href="https://radiantearth.github.io/stac-browser/#/external/marinesensitivity.org/stac/catalog.json">Browse it</a>
+      in STAC Browser</li>
+  <li><a href="https://stac-api.marinesensitivity.org/">stac-api.marinesensitivity.org</a> &mdash;
+      the searchable STAC API, one Item per model</li>
+</ul>
+<pre>library(rstac)
+cat &lt;- read_stac("https://marinesensitivity.org/stac/catalog.json")
+
+# python
+import pystac
+cat = pystac.Catalog.from_file("https://marinesensitivity.org/stac/catalog.json")</pre>
+<p class="muted">The collections and items are served from
+<a href="https://file.marinesensitivity.org/stac/catalog.json">file.marinesensitivity.org/stac</a>;
+this address is an alias of the root. <a href="https://marinesensitivity.org/">MarineSensitivity.org</a></p>
+</main>
+</body>
+</html>
