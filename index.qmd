@@ -158,6 +158,27 @@ A ground-up rebuild as a global **Marine Atlas**. What differs from v7:
 :::
 
 ::: {.timeline-item .preview}
+### v7.2 — sea turtles and the right whale where the record places them [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+
+[Preview · October 2026 — a second patch of v7, under review; supersedes v7.1; v7 remains the default]{.timeline-date}
+
+A surgical patch of v7 (release id `v7c`): the same grid, species and Program Areas, v7's own scoring re-executed, and three rules, each switchable. With all three off it reproduces v7 exactly.
+
+- **Sea turtles by the record.** A turtle species is dropped from an ecoregion where it has never been recorded in any channel: NOAA Alaska sightings, strandings and bycatch (1963–2020), fishery observers, OBIS, GBIF, iNaturalist, stranding networks. That removes four species from the East Bering Sea (no turtle in 13,317 cells with a marine mammal record) and keeps the loggerhead, green, leatherback and olive ridley in the Gulf of Alaska, where all four have been recorded. v7.1's suitability threshold, which had removed three of those, is replaced.
+- **North Atlantic right whale.** Dropped from the Gulf of America, where the IUCN range had placed it at a mean of 57 across Program Areas A and B: 11 OBIS records in the Gulf against 4,133 in the Atlantic, no critical habitat, and the habitat-based density models (Roberts et al. 2016) treat it as an Atlantic species.
+- **Coverage floor** kept from v7.1: a component is reported for a Program Area only where its scored cells cover at least 5% of the area. With the record rule it is what clears the last turtle slivers from the Aleutian Arc and St. George Basin.
+
+```{=html}
+<div class="timeline-apps">
+  <a href="https://preview.marinesensitivity.org/v7c/scores/" target="_blank">Composite Scores (v7.2) →</a>
+  <a href="https://preview.marinesensitivity.org/v7c/species/" target="_blank">Species Distributions (v7.2) →</a>
+  <a href="https://preview.marinesensitivity.org/v7c/atlas/" target="_blank">Atlas (v7.2) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v7c/" target="_blank">Documentation (v7.2) →</a>
+</div>
+```
+:::
+
+::: {.timeline-item .preview}
 ### v7.1 — sea-turtle core habitat + coverage floor [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
 
 [Preview · September 2026 — a patch of v7, under review; v7 remains the default]{.timeline-date}
