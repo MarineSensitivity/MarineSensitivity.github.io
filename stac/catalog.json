@@ -38,6 +38,11 @@
     },
     {
       "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v7c/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
       "href": "https://file.marinesensitivity.org/stac/v8/collection.json",
       "type": "application/json"
     },
