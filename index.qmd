@@ -51,12 +51,12 @@ include-in-header:
              alt="The Atlas Species view for the leatherback turtle, listing its model inputs beside its merged distribution.">
         <span class="entry-body">
           <span class="entry-title"><i class="bi bi-binoculars" aria-hidden="true"></i>Species</span>
-          <span class="entry-text">One species' distribution, each model input it was merged from, and its extinction risk.</span>
+          <span class="entry-text">One species' distribution, each model input it was merged from, and its conservation status.</span>
         </span>
       </a>
-      <a class="entry" href="https://marinesensitivity.org/atlas/?tool=report&amp;tour=off">
+      <a class="entry" href="https://marinesensitivity.org/atlas/?tool=report">
         <img src="images/atlas/report.jpg" width="720" height="450" loading="lazy"
-             alt="The Atlas Report panel with Gulf of Alaska Program Area A added as a place and its composite score shown.">
+             alt="The Atlas Report panel with Gulf of America Program Area A (GAA) added as a place and its 33.1 composite score shown, above the Add a place controls.">
         <span class="entry-body">
           <span class="entry-title"><i class="bi bi-pentagon" aria-hidden="true"></i>Your area</span>
           <span class="entry-text">Draw, upload or pick an area and get its scores, its species and a printable report.</span>
@@ -79,15 +79,15 @@ include-in-header:
         <ul>
           <li>
             <a href="https://marinesensitivity.org/stac/"><i class="bi bi-diagram-3" aria-hidden="true"></i>STAC catalog</a>
-            <span>Species distribution models of every release, described with the sdm extension. Also as <a href="https://marinesensitivity.org/stac/catalog.json">catalog.json</a> and a searchable <a href="https://stac-api.marinesensitivity.org/">STAC API</a>.</span>
+            <span>Species distribution models of v7 and later releases, described with the sdm extension. Also as <a href="https://marinesensitivity.org/stac/catalog.json">catalog.json</a> and a searchable <a href="https://stac-api.marinesensitivity.org/">STAC API</a>.</span>
           </li>
           <li>
             <a href="https://storage.marinesensitivity.org/marine-atlas/"><i class="bi bi-folder2-open" aria-hidden="true"></i>File browser</a>
-            <span>The published Parquet tables, rasters and manifests, release by release.</span>
+            <span>The published Parquet tables and manifests of every public release, and the shared raster store they point to.</span>
           </li>
           <li>
             <a href="https://api.marinesensitivity.org"><i class="bi bi-braces" aria-hidden="true"></i>API</a>
-            <span>Species and summary statistics for a feature, and Program Area reports.</span>
+            <span>Species lists and rendered reports for a Program Area or drawn polygon, release statistics, and OBIS summaries by H3 hexagon.</span>
           </li>
         </ul>
       </div>
@@ -193,7 +193,7 @@ Decoupled species validity from Program Area overlap. Earlier versions silently 
 :::
 
 ::: {.reviewer-note}
-<i class="bi bi-person-lock" aria-hidden="true"></i> Pre-releases are served from the **review host** and open only to invited reviewers: sign in with your reviewer e-mail and a one-time code is sent. The public Atlas always shows the current release.
+<i class="bi bi-person-lock" aria-hidden="true"></i> Pre-releases are served from the **review host** and open only to invited reviewers: sign in with your reviewer e-mail and a one-time code is sent. The public Atlas opens on the current release and never shows a pre-release.
 :::
 
 ::: {.timeline .timeline-preview}
