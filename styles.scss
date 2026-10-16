@@ -394,6 +394,35 @@ body.quarto-dark .taxa img {
   filter: invert(56%) sepia(50%) saturate(600%) hue-rotate(180deg) brightness(105%);
 }
 
+// wide screens: each short paragraph sits beside what it describes, so it is not a
+// narrow column in the left half of a full-width band ----
+@media (min-width: 992px) {
+  .method-grid {
+    display:               grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap:                   3rem;
+    align-items:           start;
+
+    .method-figure { margin-top: 0; }
+  }
+
+  .about-grid {
+    display:               grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap:                   3rem;
+    align-items:           center;
+
+    .taxa {
+      margin:         0;
+      flex-direction: column;
+      gap:            0.9rem;
+
+      // one icon column, so the labels share a left edge
+      img, .bi { width: 44px; flex: 0 0 44px; object-fit: contain; text-align: center; }
+    }
+  }
+}
+
 // releases ----
 .release-group-title h3 {
   font-size:     1.3rem;

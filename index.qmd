@@ -123,6 +123,8 @@ include-in-header:
 
 ## How the scores are made {#methodology}
 
+:::: {.method-grid}
+
 ::: {.method-text}
 Species distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA Fisheries, USFWS and other sources are resampled onto one 0.05° grid. Each species is weighted by its extinction risk under the Endangered Species Act or the IUCN Red List, with floors for species protected by the Marine Mammal Protection Act and the Migratory Bird Treaty Act. Species categories and primary productivity are rescaled within each ecoregion and combined, equally weighted, into a composite score for every cell and Program Area. The [documentation](https://marinesensitivity.org/docs/) describes each step.
 :::
@@ -130,6 +132,8 @@ Species distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA F
 ::: {.method-figure}
 ![Overview of the methodology: species distributions and extinction risk combine into composite sensitivity scores.](images/overview-methods.svg){.lightbox}
 :::
+
+::::
 
 ::::
 :::::
@@ -140,7 +144,11 @@ Species distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA F
 
 ## About
 
+:::: {.about-grid}
+
+::: {.about-text}
 The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Continental Shelf Lands Act** (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.
+:::
 
 ```{=html}
 <ul class="taxa" aria-label="Scored groups">
@@ -151,6 +159,8 @@ The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Conti
   <li><i class="bi bi-three-dots" aria-hidden="true"></i>And more</li>
 </ul>
 ```
+
+::::
 
 ::::
 :::::
