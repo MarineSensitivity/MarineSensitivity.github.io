@@ -46,14 +46,14 @@
     "href": "index.html#methodology",
     "title": "Marine Sensitivity Toolkit",
     "section": "How the scores are made",
-    "text": "How the scores are made\n\nSpecies distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA Fisheries, USFWS and other sources are resampled onto one 0.05° grid. Each species is weighted by its extinction risk under the Endangered Species Act or the IUCN Red List, with floors for species protected by the Marine Mammal Protection Act and the Migratory Bird Treaty Act. Species categories and primary productivity are rescaled within each ecoregion and combined, equally weighted, into a composite score for every cell and Program Area. The documentation describes each step.\n\n\n\n\n\nOverview of the methodology: species distributions and extinction risk combine into composite sensitivity scores."
+    "text": "How the scores are made\n\n\nSpecies distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA Fisheries, USFWS and other sources are resampled onto one 0.05° grid. Each species is weighted by its extinction risk under the Endangered Species Act or the IUCN Red List, with floors for species protected by the Marine Mammal Protection Act and the Migratory Bird Treaty Act. Species categories and primary productivity are rescaled within each ecoregion and combined, equally weighted, into a composite score for every cell and Program Area. The documentation describes each step.\n\n\n\n\n\nOverview of the methodology: species distributions and extinction risk combine into composite sensitivity scores."
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
     "title": "Marine Sensitivity Toolkit",
     "section": "About",
-    "text": "About\nThe Bureau of Ocean Energy Management (BOEM) is mandated under the Outer Continental Shelf Lands Act (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.\n\n  Fish\n  Marine mammals\n  Seabirds\n  Primary productivity\n  And more"
+    "text": "About\n\n\nThe Bureau of Ocean Energy Management (BOEM) is mandated under the Outer Continental Shelf Lands Act (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.\n\n\n  Fish\n  Marine mammals\n  Seabirds\n  Primary productivity\n  And more"
   },
   {
     "objectID": "index.html#releases",

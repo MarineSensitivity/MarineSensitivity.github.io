@@ -47,8 +47,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b037b05ee6b5ff67a791890d1ad9d11b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a5e8ef6bcbe1a7b406e6d076db76ddec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-574583b3a80a4f158f0001fae4f1e3f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-fe0e93ed49496fc205ff8129d2360e81.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -392,6 +392,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="band band-method">
 <section id="methodology" class="level2 band-inner">
 <h2 class="anchored" data-anchor-id="methodology">How the scores are made</h2>
+<div class="method-grid">
 <div class="method-text">
 <p>Species distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA Fisheries, USFWS and other sources are resampled onto one 0.05° grid. Each species is weighted by its extinction risk under the Endangered Species Act or the IUCN Red List, with floors for species protected by the Marine Mammal Protection Act and the Migratory Bird Treaty Act. Species categories and primary productivity are rescaled within each ecoregion and combined, equally weighted, into a composite score for every cell and Program Area. The <a href="https://marinesensitivity.org/docs/">documentation</a> describes each step.</p>
 </div>
@@ -403,13 +404,17 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
+</div>
 </section>
 </div>
 <!-- about ---------------------------------------------------------------- -->
 <div class="band band-about">
 <section id="about" class="level2 band-inner">
 <h2 class="anchored" data-anchor-id="about">About</h2>
+<div class="about-grid">
+<div class="about-text">
 <p>The Bureau of Ocean Energy Management (BOEM) is mandated under the <strong>Outer Continental Shelf Lands Act</strong> (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.</p>
+</div>
 <ul class="taxa" aria-label="Scored groups">
   <li><img src="images/icons/fish.svg" alt="">Fish</li>
   <li><img src="images/icons/mammal.svg" alt="">Marine mammals</li>
@@ -417,6 +422,7 @@ ul.task-list li input[type="checkbox"] {
   <li><img src="images/icons/productivity.svg" alt="">Primary productivity</li>
   <li><i class="bi bi-three-dots" aria-hidden="true"></i>And more</li>
 </ul>
+</div>
 </section>
 </div>
 <!-- releases ------------------------------------------------------------- -->
