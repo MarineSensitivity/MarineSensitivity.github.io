@@ -26,7 +26,7 @@ include-in-header:
     </div>
     <figure class="hero-shot">
       <img src="images/atlas-hero.png" width="1600" height="1000"
-           alt="The Marine Sensitivity Atlas: a globe centred on North America with composite sensitivity scores drawn in a blue-to-red ramp along the US coasts, Alaska, the Gulf of America and Puerto Rico, beside the Layers panel for choosing the spatial unit, score layer and colour palette.">
+           alt="The Marine Sensitivity Atlas: the Details panel open on All US waters, with a flower plot of the component scores around a composite of 24 and the table of component scores (bird 45.7, mammal 41.7, turtle 38.8 and others), beside a globe centred on North America with composite sensitivity scores along the US coasts, Alaska, the Gulf of America and Puerto Rico.">
     </figure>
   </div>
 </header>
@@ -42,7 +42,7 @@ include-in-header:
         <img src="images/atlas/scores.jpg" width="720" height="450" loading="lazy"
              alt="The Atlas Scores view with Program Areas selected: Alaska Program Areas shaded by composite score.">
         <span class="entry-body">
-          <span class="entry-title"><i class="bi bi-grid-3x3" aria-hidden="true"></i>Scores</span>
+          <span class="entry-title"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.13 8.40L12.38 1.01A11 11 0 0 1 19.50 3.96L14.46 9.37A3.6 3.6 0 0 0 12.13 8.40ZM14.63 9.54L17.12 7.23A7 7 0 0 1 19.00 11.76L15.60 11.87A3.6 3.6 0 0 0 14.63 9.54ZM15.60 12.13L21.49 12.33A9.5 9.5 0 0 1 18.95 18.48L14.63 14.46A3.6 3.6 0 0 0 15.60 12.13ZM14.46 14.63L16.09 16.39A6 6 0 0 1 12.21 18.00L12.13 15.60A3.6 3.6 0 0 0 14.46 14.63ZM11.87 15.60L11.63 22.49A10.5 10.5 0 0 1 4.84 19.68L9.54 14.63A3.6 3.6 0 0 0 11.87 15.60ZM9.37 14.46L7.25 16.43A6.5 6.5 0 0 1 5.50 12.23L8.40 12.13A3.6 3.6 0 0 0 9.37 14.46ZM8.40 11.87L3.51 11.70A8.5 8.5 0 0 1 5.78 6.20L9.37 9.54A3.6 3.6 0 0 0 8.40 11.87ZM9.54 9.37L8.25 7.98A5.5 5.5 0 0 1 11.81 6.50L11.87 8.40A3.6 3.6 0 0 0 9.54 9.37ZM9.6 12a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0-4.8 0Z"/></svg>Scores</span>
           <span class="entry-text">Composite sensitivity for every 0.05° cell or Program Area, and the species categories behind it.</span>
         </span>
       </a>
