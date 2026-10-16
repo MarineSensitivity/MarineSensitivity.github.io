@@ -1,166 +1,207 @@
 ---
 pagetitle: "Marine Sensitivity Toolkit"
+description: "An atlas of marine species distributions and federal conservation status, scored across US ocean waters to support offshore energy planning."
+image: images/atlas-hero.png
 include-in-header:
   - text: |
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 ---
 
-<!-- hero ----------------------------------------------------------------- -->
-::::: {.hero}
-:::: {.hero-content}
+<!-- hero: the Atlas is the front door ------------------------------------ -->
+```{=html}
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <img class="mst-mark" src="images/mst-mark-dark.svg" alt="">
+      <h1>Marine Sensitivity Toolkit</h1>
+      <p class="tagline">An atlas of species distributions and federal conservation status, scored across US ocean waters in support of offshore energy planning.</p>
+      <div class="hero-cta">
+        <a class="btn-atlas" href="https://marinesensitivity.org/atlas/">Open the Atlas →</a>
+        <span class="hero-release">v7 · current release</span>
+      </div>
+      <img class="boem-logo" src="images/logo_BOEM.png" alt="Bureau of Ocean Energy Management">
+    </div>
+    <figure class="hero-shot">
+      <img src="images/atlas-hero.png" width="1280" height="800"
+           alt="The Marine Sensitivity Atlas: a globe centred on North America with composite sensitivity scores drawn in a blue-to-red ramp along the US coasts, Alaska, the Gulf of America and Puerto Rico, beside the Layers panel for choosing the study area, spatial units and layer.">
+    </figure>
+  </div>
+</header>
+```
 
-![](images/mst-hero.svg){.hero-art fig-alt="Marine Sensitivity Toolkit — species distributions and extinction risk, scored across US ocean waters"}
+<!-- three ways into the Atlas -------------------------------------------- -->
+```{=html}
+<section class="band band-entries" aria-labelledby="h-start">
+  <div class="band-inner">
+    <h2 id="h-start">Start with a question</h2>
+    <div class="entries">
+      <a class="entry" href="https://marinesensitivity.org/atlas/">
+        <img src="images/atlas/scores.jpg" width="720" height="450" loading="lazy"
+             alt="The Atlas Scores view with Program Areas selected: Alaska Program Areas shaded by composite score.">
+        <span class="entry-body">
+          <span class="entry-title"><i class="bi bi-grid-3x3" aria-hidden="true"></i>Scores</span>
+          <span class="entry-text">Composite sensitivity for every 0.05° cell or Program Area, and the species categories behind it.</span>
+        </span>
+      </a>
+      <a class="entry" href="https://marinesensitivity.org/atlas/?lens=species">
+        <img src="images/atlas/species.jpg" width="720" height="450" loading="lazy"
+             alt="The Atlas Species view for the leatherback turtle, listing its model inputs beside its merged distribution.">
+        <span class="entry-body">
+          <span class="entry-title"><i class="bi bi-binoculars" aria-hidden="true"></i>Species</span>
+          <span class="entry-text">One species' distribution, each model input it was merged from, and its extinction risk.</span>
+        </span>
+      </a>
+      <a class="entry" href="https://marinesensitivity.org/atlas/?tool=report&amp;tour=off">
+        <img src="images/atlas/report.jpg" width="720" height="450" loading="lazy"
+             alt="The Atlas Report panel with Gulf of Alaska Program Area A added as a place and its composite score shown.">
+        <span class="entry-body">
+          <span class="entry-title"><i class="bi bi-pentagon" aria-hidden="true"></i>Your area</span>
+          <span class="entry-text">Draw, upload or pick an area and get its scores, its species and a printable report.</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+```
 
-::: {.hero-text}
+<!-- data & code ---------------------------------------------------------- -->
+```{=html}
+<section class="band band-data" aria-labelledby="h-data">
+  <div class="band-inner">
+    <h2 id="h-data">Data and code</h2>
+    <p class="lede">Every release is published openly, in formats you can query without the Atlas.</p>
+    <div class="directory">
+      <div class="dir-group">
+        <h3>Data</h3>
+        <ul>
+          <li>
+            <a href="https://marinesensitivity.org/stac/"><i class="bi bi-diagram-3" aria-hidden="true"></i>STAC catalog</a>
+            <span>Species distribution models of every release, described with the sdm extension. Also as <a href="https://marinesensitivity.org/stac/catalog.json">catalog.json</a> and a searchable <a href="https://stac-api.marinesensitivity.org/">STAC API</a>.</span>
+          </li>
+          <li>
+            <a href="https://storage.marinesensitivity.org/marine-atlas/"><i class="bi bi-folder2-open" aria-hidden="true"></i>File browser</a>
+            <span>The published Parquet tables, rasters and manifests, release by release.</span>
+          </li>
+          <li>
+            <a href="https://api.marinesensitivity.org"><i class="bi bi-braces" aria-hidden="true"></i>API</a>
+            <span>Species and summary statistics for a feature, and Program Area reports.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3>Code and documentation</h3>
+        <ul>
+          <li>
+            <a href="https://marinesensitivity.org/docs/"><i class="bi bi-book" aria-hidden="true"></i>Documentation</a>
+            <span>Methods, data sources and results, one edition per release.</span>
+          </li>
+          <li>
+            <a href="https://github.com/MarineSensitivity/msens"><i class="bi bi-box-seam" aria-hidden="true"></i>msens R package</a>
+            <span>Read a release from R: scores, species lists and model cells. <a href="https://marinesensitivity.org/msens/">Reference site</a>.</span>
+          </li>
+          <li>
+            <a href="https://marinesensitivity.org/workflows/"><i class="bi bi-journal-code" aria-hidden="true"></i>Workflows</a>
+            <span>The notebooks that ingest, merge, score and publish each release.</span>
+          </li>
+          <li>
+            <a href="https://github.com/MarineSensitivity"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
+            <span>All source code for the toolkit, the Atlas and this site.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
-![](images/mst-mark-dark.svg){.mst-mark fig-alt=""}
+<!-- methodology ---------------------------------------------------------- -->
+::::: {.band .band-method}
+:::: {.band-inner}
 
-# Marine Sensitivity Toolkit
+## How the scores are made {#methodology}
 
-::: {.tagline}
-
-_atlas of species distributions and federal conservation status in support of U.S. offshore energy planning_
-
+::: {.method-text}
+Species distribution models and range maps from AquaMaps, BirdLife, IUCN, NOAA Fisheries, USFWS and other sources are resampled onto one 0.05° grid. Each species is weighted by its extinction risk under the Endangered Species Act or the IUCN Red List, with floors for species protected by the Marine Mammal Protection Act and the Migratory Bird Treaty Act. Species categories and primary productivity are rescaled within each ecoregion and combined, equally weighted, into a composite score for every cell and Program Area. The [documentation](https://marinesensitivity.org/docs/) describes each step.
 :::
 
+::: {.method-figure}
+![Overview of the methodology: species distributions and extinction risk combine into composite sensitivity scores.](images/overview-methods.svg){.lightbox}
 :::
-
-![](images/logo_BOEM.png){.boem-logo}
 
 ::::
 :::::
 
-<!-- explore the data ----------------------------------------------------- -->
-:::: {.section-container}
-## Explore the Data
-
-```{=html}
-<div class="app-cards">
-  <a class="app-card" href="https://app.marinesensitivity.org/scores/" target="_blank">
-    <i class="bi bi-globe-americas"></i>
-    <h3>Composite Scores</h3>
-    <p>Interactive map of composite sensitivity scores across Program Areas</p>
-  </a>
-  <a class="app-card" href="https://app.marinesensitivity.org/species/" target="_blank">
-    <i class="bi bi-layers"></i>
-    <h3>Species Distributions</h3>
-    <p>Individual species distribution models, habitat suitability, and extinction risk</p>
-  </a>
-  <a class="app-card" href="https://marinesensitivity.org/docs/" target="_blank">
-    <i class="bi bi-book"></i>
-    <h3>Documentation</h3>
-    <p>Technical methods, data sources, and workflow notebooks</p>
-  </a>
-</div>
-```
-::::
-
-
-<!-- methodology ---------------------------------------------------------- -->
-:::: {.section-container}
-## Methodology Overview
-
-The Marine Sensitivity Toolkit integrates species distribution models, extinction risk scores, and cumulative impact layers to produce composite sensitivity surfaces for offshore energy planning areas. The framework synthesizes data from NOAA, USFWS, IUCN, and academic sources to support evidence-based decision making under the Outer Continental Shelf Lands Act. For more, see the [Documentation](https://marinesensitivity.org/docs/).
-
-::: {.method-figure}
-![Overview of the marine sensitivity methodology](images/overview-methods.svg){.lightbox}
-:::
-::::
-
 <!-- about ---------------------------------------------------------------- -->
-::::: {.section-container}
+::::: {.band .band-about}
+:::: {.band-inner}
+
 ## About
 
 The Bureau of Ocean Energy Management (BOEM) is mandated under the **Outer Continental Shelf Lands Act** (OCSLA) to balance energy development with environmental protection. The Marine Sensitivity Toolkit provides spatially explicit, species-level sensitivity metrics to inform leasing decisions and environmental reviews across the National OCS Program.
 
-:::: {.about-stats}
-
-::: {.stat-item}
-![](images/icons/fish.svg){.stat-icon}
-
-[Fish]{.stat-label}
-:::
-
-::: {.stat-item}
-![](images/icons/mammal.svg){.stat-icon}
-
-[Marine Mammals]{.stat-label}
-:::
-
-::: {.stat-item}
-![](images/icons/bird.svg){.stat-icon}
-
-[Seabirds]{.stat-label}
-:::
-
-::: {.stat-item}
-![](images/icons/productivity.svg){.stat-icon}
-
-[Primary Productivity]{.stat-label}
-:::
-
-::: {.stat-item}
-<i class="bi bi-three-dots"></i>
-[And more]{.stat-label}
-:::
+```{=html}
+<ul class="taxa" aria-label="Scored groups">
+  <li><img src="images/icons/fish.svg" alt="">Fish</li>
+  <li><img src="images/icons/mammal.svg" alt="">Marine mammals</li>
+  <li><img src="images/icons/bird.svg" alt="">Seabirds</li>
+  <li><img src="images/icons/productivity.svg" alt="">Primary productivity</li>
+  <li><i class="bi bi-three-dots" aria-hidden="true"></i>And more</li>
+</ul>
+```
 
 ::::
 :::::
 
-<!-- version history ------------------------------------------------------ -->
-::::: {.section-container}
-## Version History
+<!-- releases ------------------------------------------------------------- -->
+::::: {.band .band-releases}
+:::: {.band-inner}
 
-:::: {.timeline}
+## Releases {#releases}
 
-::: {.timeline-item .preview}
-### v9 — AquaX + spatial extinction risk [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
-
-[Preview · August 2026 — under review; v7 remains the default]{.timeline-date}
-
-Builds on the v8 Marine Atlas with two changes to *what* is scored, on the same global grid:
-
-- **AquaX supersedes AquaMaps in US waters.** 10,536 ensemble habitat-suitability models from the AquaX framework (Reygondeau et al. 2026), delivered on the analysis grid and masked to US waters, replace AquaMaps for the same species wherever AquaX was modeled (10,517 species); AquaMaps continues for the ~6,000 species AquaX did not model and everywhere outside its mask. Each input can be viewed *as delivered* and *as ingested*.
-- **Extinction risk is spatial for species listed by Distinct Population Segment.** For the 19 species whose ESA listing applies to some populations only (humpback and Southern Resident killer whales, Cook Inlet beluga, the salmon and steelhead ESUs, both sturgeons, …) risk is a per-cell surface — each listed entity's status inside its designated critical habitat, from NOAA Fisheries' authoritative service, and the species' baseline elsewhere — carried beside the merged model and applied at scoring. The humpback no longer reads Endangered species-wide from DPSs that breed outside US waters.
-- **Program-Area scores stay equivalent** to v8 on common inputs (a control run with supersession off reproduces v8 exactly), and the 2,742 species AquaX modeled but found absent in US waters keep their AquaMaps surface pending review.
-
-```{=html}
-<div class="timeline-apps">
-  <a href="https://preview.marinesensitivity.org/v9/scores/" target="_blank">Composite Scores (v9) →</a>
-  <a href="https://preview.marinesensitivity.org/v9/species/" target="_blank">Species Distributions (v9) →</a>
-  <a href="https://preview.marinesensitivity.org/docs/v9/" target="_blank">Documentation (v9) →</a>
-</div>
-```
-
-Pre-releases are served from the **review host** and open only to invited reviewers (sign in with your reviewer e-mail; a one-time code is sent). The public apps always show the current release.
+::: {.release-lede}
+Each release is a fixed, citable build of the toolkit. The Atlas opens the current release; every earlier one stays available.
 :::
 
-::: {.timeline-item .preview}
-### v8 — Marine Atlas [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+::: {.release-group-title}
+### Current release
+:::
 
-[Preview · July–August 2026 — under review; v7 remains the default]{.timeline-date}
+::: {.timeline .timeline-current}
 
-A ground-up rebuild as a global **Marine Atlas**. What differs from v7:
+::: {.timeline-item .current}
+#### v7: species validity decoupled from Program Areas
 
-- **Whole-range global ingest.** Every species is modeled across its *entire* global range on a shared global 0.05° ocean grid — no US land mask, no Program-Area gate — so a species' full distribution is captured and "how marine" is a *derived* metric, not a filter.
-- **Seabird de-duplication.** A BirdLife-sisid ↔ WoRMS-aphia crosswalk merges each bird's BirdLife, USFWS, and AquaMaps inputs into a *single* model; v7 split some seabirds across two taxa (e.g. Marbled Murrelet, Brown Pelican). This removes double-counting — seabird-heavy Program Areas (Alaska, Pacific) score several points lower than v7 as a result, with overall Program-Area correlation to v7 of 0.94.
-- **Original *and* interpolated distributions.** Each source model is published in two representations — the native-resolution original (e.g. AquaMaps 0.5° HCAF) and the 0.05° interpolated surface used in scoring — stored in a **STAC** catalog and toggleable in the species app.
-- **Partitioned-Parquet marine-atlas on S3.** All layers are released as content-addressed, partitioned Parquet served via titiler + a STAC catalog, replacing per-dataset archives.
-- **Taxonomy-driven categories.** Species categories come from WoRMS taxonomy (no catch-all "other" bucket); reptiles and amphibians are excluded from scoring.
+[June 2026 – present]{.timeline-date}
+
+Decoupled species validity from Program Area overlap. Earlier versions silently required a species to overlap a current BOEM Program Area to count as valid, which hid biodiversity outside the program cycle's footprint. Validity now means a taxonomically valid species with a modeled distribution anywhere in the study area, restoring the full set from 9,424 to **16,153 valid marine species** — of which **9,230** fall within the 20 BOEM Program Areas. Program Area membership is now applied as a spatial query rather than a species-level filter, so the map and report applications show marine life everywhere in US waters, not only within Program Areas. Scores were recomputed over the full set with negligible effect on Program Area scores (18 of 20 unchanged; only Gulf of America GAB −0.04 and GAA −0.00 shifted).
 
 ```{=html}
-<div class="timeline-apps">
-  <a href="https://preview.marinesensitivity.org/v8/scores/" target="_blank">Composite Scores (v8) →</a>
-  <a href="https://preview.marinesensitivity.org/v8/species/" target="_blank">Species Distributions (v8) →</a>
-  <a href="https://preview.marinesensitivity.org/docs/v8/" target="_blank">Documentation (v8) →</a>
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v7">Atlas (v7) →</a>
+  <a href="https://marinesensitivity.org/docs/v7/">Documentation (v7) →</a>
 </div>
 ```
 :::
 
-::: {.timeline-item .preview}
-### v7.2 — sea turtles and the right whale where the record places them [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+:::
 
-[Preview · October 2026 — a second patch of v7, under review; supersedes v7.1; v7 remains the default]{.timeline-date}
+::: {.release-group-title}
+### Pre-releases under review
+:::
+
+::: {.reviewer-note}
+<i class="bi bi-person-lock" aria-hidden="true"></i> Pre-releases are served from the **review host** and open only to invited reviewers: sign in with your reviewer e-mail and a one-time code is sent. The public Atlas always shows the current release.
+:::
+
+::: {.timeline .timeline-preview}
+
+::: {.timeline-item .preview}
+#### v7.2: sea turtles and the right whale where the record places them
+
+[October 2026 · a second patch of v7, supersedes v7.1]{.timeline-date}
 
 A surgical patch of v7 (release id `v7c`): the same grid, species and Program Areas, v7's own scoring re-executed, and three rules, each switchable. With all three off it reproduces v7 exactly.
 
@@ -169,19 +210,17 @@ A surgical patch of v7 (release id `v7c`): the same grid, species and Program Ar
 - **Coverage floor** kept from v7.1: a component is reported for a Program Area only where its scored cells cover at least 5% of the area. With the record rule it is what clears the last turtle slivers from the Aleutian Arc and St. George Basin.
 
 ```{=html}
-<div class="timeline-apps">
-  <a href="https://preview.marinesensitivity.org/v7c/scores/" target="_blank">Composite Scores (v7.2) →</a>
-  <a href="https://preview.marinesensitivity.org/v7c/species/" target="_blank">Species Distributions (v7.2) →</a>
-  <a href="https://preview.marinesensitivity.org/v7c/atlas/" target="_blank">Atlas (v7.2) →</a>
-  <a href="https://preview.marinesensitivity.org/docs/v7c/" target="_blank">Documentation (v7.2) →</a>
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v7c/atlas/">Atlas (v7.2) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v7c/">Documentation (v7.2) →</a>
 </div>
 ```
 :::
 
 ::: {.timeline-item .preview}
-### v7.1 — sea-turtle core habitat + coverage floor [PRE-RELEASE · REVIEWERS]{.badge-prerelease}
+#### v7.1: sea-turtle core habitat and coverage floor
 
-[Preview · September 2026 — a patch of v7, under review; v7 remains the default]{.timeline-date}
+[September 2026 · a patch of v7]{.timeline-date}
 
 A surgical patch of v7 (release id `v7b`): the same grid, species and Program Areas, v7's own scoring re-executed, and two method changes. With both switched off it reproduces v7 exactly.
 
@@ -190,68 +229,166 @@ A surgical patch of v7 (release id `v7b`): the same grid, species and Program Ar
 - **Worth a careful look:** with its below-average turtle component gone, Cook Inlet's mean of remaining components (53.2) edges past Hope Basin (52.7) for the top rank. Primary productivity is unchanged from v7; the year-integrated correction lands with v10, where a national reference makes it count.
 
 ```{=html}
-<div class="timeline-apps">
-  <a href="https://preview.marinesensitivity.org/v7b/scores/" target="_blank">Composite Scores (v7.1) →</a>
-  <a href="https://preview.marinesensitivity.org/v7b/species/" target="_blank">Species Distributions (v7.1) →</a>
-  <a href="https://preview.marinesensitivity.org/docs/v7b/" target="_blank">Documentation (v7.1) →</a>
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v7b/atlas/">Atlas (v7.1) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v7b/">Documentation (v7.1) →</a>
 </div>
 ```
 :::
 
-::: {.timeline-item .current}
-### v7
+::: {.timeline-item .preview}
+#### v9: AquaX and spatial extinction risk
 
-[June 2026 – present]{.timeline-date}
+[August 2026 · builds on v8]{.timeline-date}
 
-Decoupled species validity from Program Area overlap. Earlier versions silently required a species to overlap a current BOEM Program Area to count as valid, which hid biodiversity outside the program cycle's footprint. Validity now means a taxonomically valid species with a modeled distribution anywhere in the study area, restoring the full set from 9,424 to **16,153 valid marine species** — of which **9,230** fall within the 20 BOEM Program Areas. Program Area membership is now applied as a spatial query rather than a species-level filter, so the map and report applications show marine life everywhere in US waters, not only within Program Areas. Scores were recomputed over the full set with negligible effect on Program Area scores (18 of 20 unchanged; only Gulf of America GAB −0.04 and GAA −0.00 shifted).
+Builds on the v8 Marine Atlas with two changes to *what* is scored, on the same global grid:
+
+- **AquaX supersedes AquaMaps in US waters.** 10,536 ensemble habitat-suitability models from the AquaX framework (Reygondeau et al. 2026), delivered on the analysis grid and masked to US waters, replace AquaMaps for the same species wherever AquaX was modeled (10,517 species); AquaMaps continues for the ~6,000 species AquaX did not model and everywhere outside its mask. Each input can be viewed *as delivered* and *as ingested*.
+- **Extinction risk is spatial for species listed by Distinct Population Segment.** For the 19 species whose ESA listing applies to some populations only (humpback and Southern Resident killer whales, Cook Inlet beluga, the salmon and steelhead ESUs, both sturgeons, …) risk is a per-cell surface — each listed entity's status inside its designated critical habitat, from NOAA Fisheries' authoritative service, and the species' baseline elsewhere — carried beside the merged model and applied at scoring. The humpback no longer reads Endangered species-wide from DPSs that breed outside US waters.
+- **Program-Area scores stay equivalent** to v8 on common inputs (a control run with supersession off reproduces v8 exactly), and the 2,742 species AquaX modeled but found absent in US waters keep their AquaMaps surface pending review.
+
+```{=html}
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v9/atlas/">Atlas (v9) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v9/">Documentation (v9) →</a>
+</div>
+```
 :::
 
+::: {.timeline-item .preview}
+#### v8: Marine Atlas
+
+[July–August 2026 · a ground-up rebuild]{.timeline-date}
+
+A ground-up rebuild as a global **Marine Atlas**. What differs from v7:
+
+- **Whole-range global ingest.** Every species is modeled across its *entire* global range on a shared global 0.05° ocean grid — no US land mask, no Program-Area gate — so a species' full distribution is captured and "how marine" is a *derived* metric, not a filter.
+- **Seabird de-duplication.** A BirdLife-sisid ↔ WoRMS-aphia crosswalk merges each bird's BirdLife, USFWS, and AquaMaps inputs into a *single* model; v7 split some seabirds across two taxa (e.g. Marbled Murrelet, Brown Pelican). This removes double-counting — seabird-heavy Program Areas (Alaska, Pacific) score several points lower than v7 as a result, with overall Program-Area correlation to v7 of 0.94.
+- **Original *and* interpolated distributions.** Each source model is published in two representations — the native-resolution original (e.g. AquaMaps 0.5° HCAF) and the 0.05° interpolated surface used in scoring — stored in a **STAC** catalog and toggleable in the Atlas.
+- **Partitioned-Parquet marine-atlas on S3.** All layers are released as content-addressed, partitioned Parquet served via titiler + a STAC catalog, replacing per-dataset archives.
+- **Taxonomy-driven categories.** Species categories come from WoRMS taxonomy (no catch-all "other" bucket); reptiles and amphibians are excluded from scoring.
+
+```{=html}
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v8/atlas/">Atlas (v8) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v8/">Documentation (v8) →</a>
+</div>
+```
+:::
+
+:::
+
+::: {.release-group-title}
+### Earlier releases
+:::
+
+::: {.timeline .timeline-history}
+
 ::: {.timeline-item}
-### v6
+#### v6
 
 [March 2026 – June 2026]{.timeline-date}
 
 Excluded 371 species (343 fish, 20 invertebrates, 6 corals, 2 mammals) whose IUCN expert range maps fall entirely outside the US EEZ — their AquaMaps predictions in US waters were edge-of-range model artifacts with near-zero suitability, now removed. Ingested 3 missing mammal IUCN range maps (*Phoca vitulina*, *Trichechus manatus*, *Pusa hispida*) from more complete IUCN mammals download. Net effect on Program Area scores is negligible: Southern California (SOC) Score +1, coral +3, fish -1.
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v6">Atlas (v6) →</a>
+  <a href="https://marinesensitivity.org/docs/v6/">Documentation (v6) →</a>
+</div>
+```
 :::
 
 ::: {.timeline-item}
-### v5
+#### v5
 
 [March 2026]{.timeline-date}
 
 Fixed MMPA spatial floor (minimum 20) for FWS-managed marine mammals (walrus, polar bear, sea otter, manatee, dugong) that were missing MMPA protection in earlier versions. Documented the bifurcation of modeling approaches: standard species use a scalar extinction risk weight at scoring time, while sea turtles use a spatially varying extinction risk raster (from SWOT+DPS) multiplied during model merging.
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v5">Atlas (v5) →</a>
+  <a href="https://marinesensitivity.org/docs/v5/">Documentation (v5) →</a>
+</div>
+```
 :::
 
 ::: {.timeline-item}
-### v4
+#### v4b
+
+[March 2026]{.timeline-date}
+
+Multiplicative sea-turtle merge: the Distinct Population Segment extinction-risk surface is multiplied into the suitability surface while merging, with critical habitat overriding by maximum, so a turtle's risk varies across its range. Those species pass through scoring at full weight so their risk is not counted twice.
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v4b">Atlas (v4b) →</a>
+  <a href="https://marinesensitivity.org/docs/v4b/">Documentation (v4b) →</a>
+</div>
+```
+:::
+
+::: {.timeline-item}
+#### v4
 
 [March 2026]{.timeline-date}
 
 Replaced overly extensive IUCN sea turtle range maps with more realistic State of the World's Turtles (SWOT) global distributions (viewable at [seamap.env.duke.edu/swot](http://seamap.env.duke.edu/swot)). Applied NOAA Distinct Population Segment (DPS) polygons with ESA listing status (NMFS:EN 100, NMFS:TN 50) to differentiate Endangered vs Threatened populations, resulting in more restrictive distributions dominated by ESA risk values. (See workflow [ingest\_turtles-swot-dps](https://marinesensitivity.org/workflows/ingest_turtles-swot-dps.html).)
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v4">Atlas (v4) →</a>
+  <a href="https://marinesensitivity.org/docs/v4/">Documentation (v4) →</a>
+</div>
+```
 :::
 
 ::: {.timeline-item}
-### v3
+#### v3
 
 [February 2026]{.timeline-date}
 
 Program Areas for the National OCS Plan. Ecoregion rescaling. Seven source datasets merged from continuous suitability models (AquaMaps) to binary range maps (NMFS, FWS, BirdLife, IUCN) with masking (where global IUCN range map exists). New species sensitivity weighting based on national ESA or global IUCN extinction risk along with protection from Marine Mammal Protection Act (MMPA) and Migratory Bird Treaty Act (MBTA).
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v3">Atlas (v3) →</a>
+  <a href="https://marinesensitivity.org/docs/v3/">Documentation (v3) →</a>
+</div>
+```
 :::
 
 ::: {.timeline-item}
-### v2
+#### v2
 
 [January 2026]{.timeline-date}
 
 Transition to Program Areas (2026). Individual model layers. Model merging pipeline. Cloud-optimized GeoTIFF storage.
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v2">Atlas (v2) →</a>
+  <a href="https://marinesensitivity.org/docs/v2/">Documentation (v2) →</a>
+</div>
+```
 :::
 
 ::: {.timeline-item}
-### v1
+#### v1
 
 [September 2023 – December 2025]{.timeline-date}
 
 Planning Areas across U.S. EEZ. AquaMaps-based species distributions. Flower plots for multi-taxa visualization. Species tables with conservation status.
+
+```{=html}
+<div class="release-links">
+  <a href="https://marinesensitivity.org/atlas/?ver=v1">Atlas (v1) →</a>
+  <a href="https://marinesensitivity.org/docs/v1/">Documentation (v1) →</a>
+</div>
+```
+:::
+
 :::
 
 ::::
