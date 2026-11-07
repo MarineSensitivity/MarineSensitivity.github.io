@@ -247,6 +247,45 @@ A surgical patch of v7 (release id `v7b`): the same grid, species and Program Ar
 :::
 
 ::: {.timeline-item .preview}
+#### v11: robust national release
+
+[November 2026 · builds on v10]{.timeline-date}
+
+The method changes queued since v7, each a flag whose control value reproduces v10:
+
+- **Our own sea-turtle distribution models** (fitted on OBIS records with the MPA Europe pipeline, on the global grid) replace AquaMaps inside each model's footprint, and the turtles merge by the DPS rule: the value is the suitability and the per-cell extinction risk rides beside it.
+- **Survey density models enter the merge** — NOAA SEFSC cetaceans in the Gulf of America, NOAA NCCOS seabirds in the Pacific and the Atlantic (2023 MDAT v3), NOAA SWFSC cetaceans in the California Current — each replacing suitability inside its own survey domain, calibrated to the surface it replaces.
+- **One occurrence rule for every species** replaces v7.2's hand-built exclusions: a species leaves an ecoregion where it has no OBIS record under adequate search effort (critical habitat, core areas, narrow-range species and unsearched ecoregions excepted) and is down-weighted where it is recorded but rarely.
+- **Primary productivity is integrated over the whole year**, a month without a retrieval counting zero, which removes the Arctic's over-productivity; **extinction risk is counted once** (a range cell is valued by its suitability, an uncovered range cell by the mean of the species' modelled cells); the components are labelled **Flora** and **Productivity**.
+
+```{=html}
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v11/atlas/">Atlas (v11) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v11/">Documentation (v11) →</a>
+</div>
+```
+:::
+
+::: {.timeline-item .preview}
+#### v10: distribution share across the nation
+
+[October 2026 · builds on v8]{.timeline-date}
+
+A second score, **across the nation**, beside the within-ecoregion one, on v8's inputs and grid (no dataset added, removed or re-ingested; AquaX not used):
+
+- **Each species' value in a cell is its share of the species' whole modelled range**, weighted by extinction risk, summed per category and zone, and expressed per square kilometre against the national average (100, a location quotient); the percent of the world's and of the nation's importance in the zone is published beside it.
+- **A component is reported only where its scored cells cover at least 5 % of the zone's area** — absent, never zero — and the composite is the equal-weight mean of the reportable components, primary productivity included. The headline denominator is global; the US and pooled alternatives are written beside it.
+- **v8's within-ecoregion metrics are kept unchanged** as the control, and the build stops if one of their rows differs; scores can now be compared across ecoregions, which the rescaled score could not.
+
+```{=html}
+<div class="release-links">
+  <a href="https://preview.marinesensitivity.org/v10/atlas/">Atlas (v10) →</a>
+  <a href="https://preview.marinesensitivity.org/docs/v10/">Documentation (v10) →</a>
+</div>
+```
+:::
+
+::: {.timeline-item .preview}
 #### v9: AquaX and spatial extinction risk
 
 [August 2026 · builds on v8]{.timeline-date}
