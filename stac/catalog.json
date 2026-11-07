@@ -50,6 +50,16 @@
       "rel": "child",
       "href": "https://file.marinesensitivity.org/stac/v9/collection.json",
       "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v10/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "https://file.marinesensitivity.org/stac/v11/collection.json",
+      "type": "application/json"
     }
   ]
 }
