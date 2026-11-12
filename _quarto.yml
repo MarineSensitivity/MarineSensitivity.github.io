@@ -1,5 +1,10 @@
 project:
   type: website
+  # quarto renders every .md it finds; keep the agent instructions off the public site
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "!CLAUDE.md"
   resources:
     - CNAME
     - branding/mma-seal.svg
