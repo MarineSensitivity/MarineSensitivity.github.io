@@ -8,6 +8,8 @@ project:
   resources:
     - CNAME
     - branding/mma-seal.svg
+    # the homepage hero shows this 216 px render of the seal (57 KB, against 897 KB for the svg)
+    - branding/mma-seal-216.png
     - branding/index.html
     # the About icons are CSS masks (inline style), which quarto's resource scan does not follow
     - "images/icons/*.svg"

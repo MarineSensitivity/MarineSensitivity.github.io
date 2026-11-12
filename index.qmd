@@ -23,7 +23,7 @@ include-in-header:
         <span class="hero-release">v7 · current release</span>
       </div>
       <div class="agency">
-        <span class="seal-plate"><img src="branding/mma-seal.svg" width="72" height="72" loading="lazy" decoding="async" alt="Seal of the Marine Minerals Administration"></span>
+        <span class="seal-plate"><img src="branding/mma-seal-216.png" width="72" height="72" loading="lazy" decoding="async" alt="Seal of the Marine Minerals Administration"></span>
         <span class="agency-name">Marine Minerals Administration<span>U.S. Department of the Interior</span></span>
       </div>
     </div>
