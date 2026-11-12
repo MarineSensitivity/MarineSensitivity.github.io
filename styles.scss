@@ -1,24 +1,20 @@
 /*-- scss:defaults --*/
 
-// BOEM USWDS color palette
-$boem-primary:        #005ea2;
-$boem-primary-dark:   #1a4480;
-$boem-primary-darker: #162e51;
-$boem-primary-light:  #73b3e7;
-$boem-primary-lighter:#d9e8f6;
-$boem-accent:         #00bde3;
-
-// the Atlas's own chrome (atlas/src/lib/brand/tokens.css): the hero frames a screenshot of the
-// Atlas, so it is drawn in the Atlas's navy, and its one button in the gold the Atlas uses for
-// whatever is active. Gold is spent there and on the current release only.
+// Marine Minerals Administration palette (MMA Branding Guide 2026, p. 7) and the Atlas's own
+// chrome built from it (the Atlas instance's tokens.css is the source of these values): the hero
+// frames a screenshot of the Atlas, so it is drawn in the Atlas's navy, and its one button in the
+// gold the Atlas uses for whatever is active. Gold is spent there and on the current release
+// only, and never as text on a light ground (1.7:1).
+$mma-gold:     #e8c24a;
+$mma-steel:    #173d6d;
+$mma-navy:     #001a57;
 $atlas-navy:   #0b1635;
 $atlas-panel:  #142446;
 $atlas-raised: #1c2f57;
 $atlas-line:   #2a3d68;
 $atlas-text-2: #c7d2e8;
-$atlas-link:   #9cc8f2;
-$mma-gold:     #e8c24a;
-$mma-navy:     #001a57;
+$atlas-link:   #9cc8f2;   // link on the dark ("navy") theme
+$paper-link:   #15467f;   // link on the light ("paper") theme
 
 // pre-releases under review keep the teal they have always had on this page
 $review:       #20c997;
@@ -39,7 +35,8 @@ body.quarto-light {
   --ms-card:    #ffffff;
   --ms-line:    #d5dde7;
   --ms-text-2:  #4d5d70;
-  --ms-accent:  #{$boem-primary};
+  --ms-accent:  #{$paper-link};
+  --ms-focus:   #{$mma-steel};
   --ms-review:  #0d7d5f;
   --ms-review-tint: #{rgba($review, 0.10)};
 }
@@ -50,6 +47,7 @@ body.quarto-dark {
   --ms-line:    #{$atlas-line};
   --ms-text-2:  #{$atlas-text-2};
   --ms-accent:  #{$atlas-link};
+  --ms-focus:   #{$mma-gold};
   --ms-review:  #4fe0b5;
   --ms-review-tint: #{rgba($review, 0.12)};
 
@@ -73,13 +71,15 @@ h1, h2, h3, h4 { letter-spacing: -0.005em; }
 
 a:focus-visible,
 button:focus-visible {
-  outline:        3px solid $boem-accent;
+  outline:        3px solid var(--ms-focus);
   outline-offset: 3px;
   border-radius:  4px;
 }
 
 // hero ----
 .hero {
+  // the hero is navy in both themes, so its focus ring is gold in both (steel is 1.6:1 here)
+  --ms-focus: #{$mma-gold};
   background: linear-gradient(165deg, #10224f 0%, $atlas-navy 55%);
   color:      #fff;
   padding:    4.5rem 2rem 4.25rem;
@@ -148,13 +148,39 @@ button:focus-visible {
     color:     $atlas-text-2;
   }
 
-  .boem-logo {
-    display:    block;
-    height:     46px;
-    width:      auto;
-    margin-top: 3rem;
-    opacity:    0.85;
-    filter:     brightness(0) invert(1);
+  // the agency lockup: the seal unmodified at 72 px on a plain white plate whose padding is the
+  // guide's clear space (a quarter of the seal's height), beside the two-line agency name
+  .agency {
+    display:     flex;
+    align-items: center;
+    gap:         1rem;
+    margin-top:  3rem;
+  }
+
+  .seal-plate {
+    flex:          none;
+    display:       block;
+    padding:       18px;
+    background:    #fff;
+    border-radius: 12px;
+
+    img { display: block; width: 72px; height: 72px; }
+  }
+
+  .agency-name {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size:   1.1rem;
+    line-height: 1.25;
+    color:       #fff;
+
+    span {
+      display:     block;
+      font-family: $font-family-sans-serif;
+      font-weight: 400;
+      font-size:   0.95rem;
+      color:       $atlas-text-2;
+    }
   }
 
   .hero-shot {
@@ -377,22 +403,23 @@ body.quarto-dark .method-figure figcaption {
     font-size:   1rem;
   }
 
-  img {
-    height: 30px;
-    width:  auto;
-    // light mode: BOEM blue (#005ea2)
-    filter: invert(20%) sepia(90%) saturate(2000%) hue-rotate(196deg) brightness(90%);
+  // each icon is its svg used as a mask over the page accent, so it follows the theme
+  .taxon-icon {
+    flex:       0 0 44px;
+    width:      44px;
+    height:     30px;
+    background: var(--ms-accent);
+    -webkit-mask: center / contain no-repeat;
+            mask: center / contain no-repeat;
   }
 
   .bi {
-    font-size: 1.5rem;
-    color:     var(--ms-accent);
+    flex:       0 0 44px;
+    width:      44px;
+    text-align: center;
+    font-size:  1.5rem;
+    color:      var(--ms-accent);
   }
-}
-
-// dark mode: BOEM light blue (#73b3e7)
-body.quarto-dark .taxa img {
-  filter: invert(56%) sepia(50%) saturate(600%) hue-rotate(180deg) brightness(105%);
 }
 
 // wide screens: each short paragraph sits beside what it describes, so it is not a
@@ -417,9 +444,6 @@ body.quarto-dark .taxa img {
       margin:         0;
       flex-direction: column;
       gap:            0.9rem;
-
-      // one icon column, so the labels share a left edge
-      img, .bi { width: 44px; flex: 0 0 44px; object-fit: contain; text-align: center; }
     }
   }
 }
@@ -481,7 +505,7 @@ body.quarto-dark .taxa img {
     width:         14px;
     height:        14px;
     border-radius: 50%;
-    background:    $boem-primary;
+    background:    var(--ms-accent);
     border:        3px solid var(--bs-body-bg);
     z-index:       1;
   }
@@ -541,7 +565,7 @@ body.quarto-dark .taxa img {
       border:          1.5px solid var(--ms-accent);
       color:           var(--ms-accent);
 
-      &:hover { background: rgba($boem-primary, 0.08); }
+      &:hover { background: color-mix(in srgb, var(--ms-accent) 10%, transparent); }
     }
   }
 
@@ -581,6 +605,13 @@ body.quarto-dark .taxa img {
   &:hover {
     background: rgba(0,0,0,0.6);
   }
+
+  // it floats over the navy hero and the light bands alike: a two-tone ring shows on both
+  &:focus-visible {
+    outline:       3px solid #fff;
+    border-radius: 50%;
+    box-shadow:    0 0 0 3px $mma-navy;
+  }
 }
 
 // responsive ----
@@ -593,7 +624,7 @@ body.quarto-dark .taxa img {
       gap:                   2.5rem;
     }
     .tagline { max-width: 40ch; }
-    .boem-logo { margin-top: 2rem; }
+    .agency { margin-top: 2rem; }
   }
   .entries { grid-template-columns: minmax(0, 1fr); max-width: 560px; }
 }
@@ -605,7 +636,6 @@ body.quarto-dark .taxa img {
     .mst-mark { height: 3.5rem; margin-bottom: 1.1rem; }
     .tagline  { font-size: 1.1rem; }
     .btn-atlas { width: 100%; text-align: center; }
-    .boem-logo { height: 38px; }
   }
   .band { padding: 3rem 1rem; }
   .band h2 { font-size: 1.65rem; }
